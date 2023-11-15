@@ -2,7 +2,8 @@
 
 PhoneBook::PhoneBook(void)
 {
-	setPhone();
+	total = 0;
+	index = 0;
 }
 
 PhoneBook::~PhoneBook(void)
@@ -22,15 +23,15 @@ void	PhoneBook::printIndex(int i)
 		std::cout << std::endl;
 		return ;
 	}
-	if (i < 1 || i > 8 || i > getTotal())
+	if (i < 1 || i > 8 || i > total)
 	{
-		std::cout << "PhoneBook: Enter index in range(1, " << getTotal() << ")\n";
+		std::cout << "PhoneBook: Enter index in range[1 - " << total << "]\n";
 		return ;
 	}
 	for (int i = 0; i < 46; i++)
 		std::cout << "-";
 	std::cout << std::endl;
-	std::cout << "Index: " << i << std::endl;
+	std::cout << "\t--->>Index: " << i << "<<---" << std::endl;
 	std::cout << "FirstName: " << contact[i - 1].getFirstN() << std::endl;
 	std::cout << "LastName: " << contact[i - 1].getFirstN() << std::endl;
 	std::cout << "NickName: " << contact[i - 1].getFirstN() << std::endl;
@@ -43,7 +44,7 @@ void	PhoneBook::printIndex(int i)
 
 void	PhoneBook::printContact(void)
 {
-	for (int i = 0; i < getTotal(); i++)
+	for (int i = 0; i < total; i++)
 	{
 		std::cout << "|";
 		std::cout.width(10);
@@ -64,7 +65,7 @@ void	PhoneBook::printHeader(void)
 {
 	std::string	i;
 
-	if (!getTotal())
+	if (!total)
 	{
 		std::cout << "PhoneBook: Contact is empty" << std::endl;
 		return ;
@@ -82,22 +83,11 @@ void	PhoneBook::printHeader(void)
 	printIndex(atoi(i.c_str()));
 }
 
-void	PhoneBook::setPhone(void)
-{
-	total = 0;
-	index = 0;
-}
-
 int	PhoneBook::getIndex(void)
 {
 	if (index > 7)
 		index = 0;
 	return (index++);
-}
-
-int	PhoneBook::getTotal(void)
-{
-	return (total);
 }
 
 void	PhoneBook::getInput(std::string msg, std::string *str)

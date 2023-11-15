@@ -1,6 +1,8 @@
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
+# include <cstdlib>
+# include <stdlib.h>
 # include "Contact.hpp"
 
 class PhoneBook
@@ -13,14 +15,12 @@ class PhoneBook
 	public:
 		PhoneBook(void);
 		~PhoneBook(void);
-		void		setPhone(void);
 		void		printContact(void);
 		void		printHeader(void);
 		void		printIndex(int i);
 		void		addContact(void);
 		void		getInput(std::string msg, std::string *str);
 		int			getIndex(void);
-		int			getTotal(void);
 		std::string	strTruncate(std::string str);
 };
 
