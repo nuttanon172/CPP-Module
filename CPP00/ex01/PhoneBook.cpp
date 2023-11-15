@@ -71,7 +71,7 @@ void	PhoneBook::printHeader(void)
 	}
 	for (int i = 0; i < 45; i++)
 		std::cout << "-";
-	std::cout << "\n|  ~Index  |~FirstName|~~LastName|~~NickName|\n";
+	std::cout << "\n|  ~Index  |~FirstName|~LastName~|~NickName~|\n";
 	for (int i = 0; i < 45; i++)
 		std::cout << "-";
 	std::cout << std::endl;
@@ -129,5 +129,8 @@ void	PhoneBook::addContact(void)
 	getInput("darkest secret: ", &d);
 	contact[getIndex()].setValue(f, l, n, p, d);
 	if (total < 8 && !std::cin.eof())
+	{	
 		total += 1;
+		std::cout << "PhoneBook: Contact saved" << std::endl;
+	}
 }
