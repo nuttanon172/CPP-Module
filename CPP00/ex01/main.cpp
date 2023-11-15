@@ -5,15 +5,9 @@ int	main(void)
 	std::string	str;
 	PhoneBook	pb;
 
-	while (1)
+	std::cout << "Enter Command: ";
+	while (std::getline(std::cin, str))
 	{
-		if (std::cin.eof())
-		{
-			std::cout << std::endl;
-			return (EXIT_SUCCESS);
-		}
-		std::cout << "Enter Command: ";
-		std::getline(std::cin, str);
 		if (!str.compare("ADD"))
 			pb.addContact();
 		else if (!str.compare("SEARCH"))
@@ -22,5 +16,8 @@ int	main(void)
 			return (EXIT_SUCCESS);
 		else
 			std::cout << "Command not found.." << std::endl;
+		if (!std::cin.eof())
+			std::cout << "Enter Command: ";
 	}
+	return (EXIT_SUCCESS);
 }
