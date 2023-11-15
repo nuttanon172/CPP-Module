@@ -1,4 +1,4 @@
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook(void)
 {
@@ -40,7 +40,7 @@ int	PhoneBook::getTotal(void)
 	return (total++);
 }
 
-void	PhoneBook::AddContact(void)
+void	PhoneBook::addContact(void)
 {
 	std::string f, l, n, p, d;
 

@@ -1,4 +1,4 @@
-#include "contact.hpp"
+#include "Contact.hpp"
 
 void	Contact::setValue(std::string f, std::string l, std::string n, std::string p, std::string d)
 {
@@ -6,7 +6,7 @@ void	Contact::setValue(std::string f, std::string l, std::string n, std::string 
 	lastname = l;
 	nickname = n;
 	phone_number = p;
-	dark_secret = d;	
+	dark_secret = d;
 }
 
 std::string	Contact::getFirstN(void)
