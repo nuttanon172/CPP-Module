@@ -1,12 +1,13 @@
-NAME	=	phonebook
+NAME	=	zombie
 
 CC	=	c++
 
 CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 SRCS	=	main.cpp \
-			Contact.cpp \
-			PhoneBook.cpp
+			newZombie.cpp \
+			randomChump.cpp \
+			Zombie.cpp
 
 OBJS	=	$(SRCS:.cpp=.o)
 
