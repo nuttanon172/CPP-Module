@@ -2,7 +2,7 @@
 
 Zombie::Zombie(void)
 {
-	this->name = "";
+	this->name = "Unknown";
 }
 
 Zombie::Zombie(std::string name)
