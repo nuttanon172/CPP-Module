@@ -1,23 +1,29 @@
-NAME	=	megaphone
+NAME    = megaphone
 
-CC	=	c++
+CC      = c++
 
-CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC	=	megaphone.cpp
+SRCS    = megaphone.cpp
 
-OBJS	=	$(SRC:.cpp=.o)
+OBJS    = $(addprefix bin/,$(SRCS:.cpp=.o))
 
-$(NAME): $(OBJS)
+$(NAME): bin $(OBJS)
 	$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
-.PHONY: all clean fclean re
+bin/%.o: %.cpp
+	$(CC) $(CPPFLAGS) -c $< -o $@
+
+.PHONY: all clean fclean re bin
 all: $(NAME)
 
 clean:
-	@rm -rf $(OBJS)
+	@rm -rf bin
 
 fclean: clean
-	@rm -rf $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
+
+bin:
+	@mkdir -p bin
