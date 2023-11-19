@@ -1,12 +1,12 @@
-NAME    = megaphone
+NAME    =	megaphone
 
-CC      = c++
+CC      =	c++
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
 
-SRCS    = megaphone.cpp
+SRCS    =	megaphone.cpp
 
-OBJS    = $(addprefix bin/,$(SRCS:.cpp=.o))
+OBJS    =	$(addprefix bin/,$(SRCS:.cpp=.o))
 
 $(NAME): bin $(OBJS)
 	$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
