@@ -1,11 +1,11 @@
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon &club) : club_type(club.getType())
+HumanA::HumanA(std::string name, Weapon &club) : c_name(name), c_club(club.getType())
 {
-	this->name = name;
+
 }
 
 void	HumanA::attack(void)
 {
-	std::cout << this->name << " attack with their " << club_type << std::endl;
+	std::cout << c_name << " attack with their " << c_club << std::endl;
 }

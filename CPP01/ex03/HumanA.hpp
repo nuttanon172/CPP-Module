@@ -6,8 +6,8 @@
 class HumanA
 {
 	private:
-		std::string			name;
-		const std::string	&club_type;
+		std::string			c_name;
+		const std::string	&c_club;
 	public:
 		HumanA(std::string name, Weapon &club);
 		void	attack(void);

@@ -9,24 +9,18 @@ SRCS    =	main.cpp \
 			randomChump.cpp \
 			Zombie.cpp
 
-OBJS    =	$(addprefix bin/,$(SRCS:.cpp=.o))
+OBJS    =	$(SRCS:.cpp=.o)
 
-$(NAME): bin $(OBJS)
+$(NAME): $(OBJS)
 	$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
-bin/%.o: %.cpp
-	$(CC) $(CPPFLAGS) -c $< -o $@
-
-.PHONY: all clean fclean re bin
+.PHONY: all clean fclean re
 all: $(NAME)
 
 clean:
-	@rm -rf bin
+	@rm -rf $(OBJS)
 
 fclean: clean
 	@rm -f $(NAME)
 
 re: fclean all
-
-bin:
-	@mkdir -p bin
