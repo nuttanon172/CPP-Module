@@ -2,6 +2,7 @@
 # define HARL_HPP
 
 # include <iostream>
+# include <stdlib.h>
 
 class	Harl
 {
@@ -12,6 +13,7 @@ class	Harl
 		void	error(void);
 	public:
 		void	complain(std::string level);
+		typedef void	(Harl::*func_ar)();
 };
 
 #endif
