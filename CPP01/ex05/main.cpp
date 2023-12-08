@@ -1,12 +1,14 @@
 #include "Harl.hpp"
 
-int	main(void)
+int	main(int ac, char **av)
 {
-	Harl		obj;
-	std::string	str;
+	Harl	obj;
 
-	obj.complain("debug");
-	obj.complain("info");
-	obj.complain("warning");
-	obj.complain("error");
+	if (ac < 2)
+	{
+		std::cout << "Harl take atleast 1 argument" << std::endl;
+		return (1);
+	}
+	obj.complain((std::string)av[1]);
+	return (0);
 }
