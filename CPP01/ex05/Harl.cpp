@@ -30,7 +30,7 @@ void	Harl::error(void)
 void	Harl::complain(std::string level)
 {
 	func_ar		func[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-	std::string	cmd[4] = {"debug", "info", "warning", "error"};
+	std::string	cmd[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 	for (size_t i = 0; i < 4; i++)
 	{

@@ -1,25 +1,25 @@
 #include "Harl.hpp"
 
-void	switch_cp(std::string level)
+static void	switch_cp(std::string level)
 {
 	Harl	obj;
-	size_t	sw;
+	size_t	sw = 4;
 	
-	std::string	cmd[4] = {"debug", "info", "warning", "error"};
+	std::string	cmd[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	for (size_t i = 0; i < 4; i++)
 		if (level == cmd[i])
 			sw = i;
 	switch (sw)
 	{
 		case 0:
-			obj.complain("debug");
+			obj.complain(cmd[0]);
 		case 1:
-			obj.complain("info");
+			obj.complain(cmd[1]);
 		case 2:
-			obj.complain("warning");
+			obj.complain(cmd[2]);
 		case 3:
 		{
-			obj.complain("error");
+			obj.complain(cmd[3]);
 			break ;
 		}
 		default:
@@ -31,9 +31,9 @@ int	main(int ac, char **av)
 {
 	if (ac < 2)
 	{
-		std::cout << "HarlFilter take atleast 1 argument" << std::endl;
-		return (1);
+		std::cout << "HarlFilter must take 1 argument" << std::endl;
+		return (EXIT_FAILURE);
 	}
 	switch_cp((std::string)av[1]);
-	return (0);
+	return (EXIT_SUCCESS);
 }
