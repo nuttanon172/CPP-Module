@@ -11,7 +11,7 @@ Fixed::Fixed(void)
 Fixed::Fixed(const Fixed &obj)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	this->_fp_nbr = obj._fp_nbr;
+	*this = obj;
 }
 
 Fixed::~Fixed(void)
@@ -22,7 +22,8 @@ Fixed::~Fixed(void)
 Fixed &Fixed::operator=(const Fixed &obj)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->_fp_nbr = obj.getRawBits();
+	if (this != &obj)
+		this->_fp_nbr = obj.getRawBits();
 	return (*this);
 }
 
