@@ -6,7 +6,7 @@ int	main(int ac, char **av)
 
 	if (ac < 2)
 	{
-		std::cout << "Harl must take 1 argument" << std::endl;
+		std::cerr << "Harl must take 1 argument" << std::endl;
 		return (EXIT_FAILURE);
 	}
 	obj.complain((std::string)av[1]);

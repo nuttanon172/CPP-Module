@@ -31,7 +31,7 @@ int	main(int ac, char **av)
 {
 	if (ac < 2)
 	{
-		std::cout << "HarlFilter must take 1 argument" << std::endl;
+		std::cerr << "HarlFilter must take 1 argument" << std::endl;
 		return (EXIT_FAILURE);
 	}
 	switch_cp((std::string)av[1]);
