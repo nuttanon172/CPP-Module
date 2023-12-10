@@ -86,27 +86,27 @@ float	Fixed::operator/(const Fixed &obj) const
 
 Fixed	Fixed::operator++(void)
 {
-	_fp_nbr += (1 << 8);
+	_fp_nbr += (1 << this->_frac_bits);
 	return (*this);
 }
 
 Fixed	Fixed::operator++(int)
 {
 	Fixed tmp = *this;
-	_fp_nbr += (1 << 8);
+	_fp_nbr += (1 << this->_frac_bits);
 	return (tmp);
 }
 
 Fixed	Fixed::operator--(void)
 {
-	_fp_nbr -= (1 << 8);	
+	_fp_nbr -= (1 << this->_frac_bits);	
 	return (*this);
 }
 
 Fixed	Fixed::operator--(int)
 {
 	Fixed tmp = *this;
-	_fp_nbr -= (1 << 8);	
+	_fp_nbr -= (1 << this->_frac_bits);	
 	return (tmp);
 }
 

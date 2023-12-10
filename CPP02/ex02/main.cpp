@@ -5,10 +5,10 @@ int	main(void)
 	Fixed		a = 1.01f;
 	Fixed const	b(Fixed(5.05f) * Fixed(2));
 	
+	std::cout << "(a: " << a <<  ", b: " << b << ")" << std::endl;
 	std::cout << (0.999999f) + (0.000001f) << std::endl;
 	std::cout << "a > b " << (a > b) << std::endl;
 	std::cout << "a < b " << (a < b) << std::endl;
-	std::cout << "(a: " << a <<  ", b: " << b << ")" << std::endl;
 	std::cout.width(6);
 	std::cout << "a : " << a << std::endl;
 	std::cout.width(6);
