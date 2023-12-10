@@ -84,7 +84,7 @@ float	Fixed::operator/(const Fixed &obj) const
 	return (this->toFloat() / obj.toFloat());
 }	
 
-Fixed	Fixed::operator++(void)
+Fixed	&Fixed::operator++(void)
 {
 	_fp_nbr += (1 << this->_frac_bits);
 	return (*this);
@@ -97,7 +97,7 @@ Fixed	Fixed::operator++(int)
 	return (tmp);
 }
 
-Fixed	Fixed::operator--(void)
+Fixed	&Fixed::operator--(void)
 {
 	_fp_nbr -= (1 << this->_frac_bits);	
 	return (*this);

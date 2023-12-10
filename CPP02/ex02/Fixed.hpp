@@ -29,9 +29,9 @@ class	Fixed
 		float	operator*(const Fixed &obj) const;
 		float	operator/(const Fixed &obj) const;	
 
-		Fixed	operator++(void);
+		Fixed	&operator++(void);
 		Fixed	operator++(int);
-		Fixed	operator--(void);
+		Fixed	&operator--(void);
 		Fixed	operator--(int);
 
 		int		getRawBits(void) const;
