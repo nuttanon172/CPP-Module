@@ -4,6 +4,10 @@ CC      =	c++
 
 CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
 
+INC     =	HumanA.hpp \
+			HumanB.hpp \
+			Weapon.hpp
+
 SRCS    =	main.cpp \
 			Weapon.cpp \
 			HumanA.cpp \
@@ -11,8 +15,8 @@ SRCS    =	main.cpp \
 
 OBJS    =	$(SRCS:.cpp=.o)
 
-$(NAME): $(OBJS)
-	$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
+$(NAME): $(OBJS) $(INC)
+	$(CC) $(CPPFLAGS) $(INC) $(OBJS) -o $(NAME)
 
 .PHONY: all clean fclean re
 all: $(NAME)

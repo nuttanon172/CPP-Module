@@ -4,14 +4,16 @@ CC      =	c++
 
 CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
 
+INC     =	Zombie.hpp
+
 SRCS    =	main.cpp \
 			Zombie.cpp \
 			zombieHorde.cpp
 
 OBJS    =	$(SRCS:.cpp=.o)
 
-$(NAME): $(OBJS)
-	$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
+$(NAME): $(OBJS) $(INC)
+	$(CC) $(CPPFLAGS) $(INC) $(OBJS) -o $(NAME)
 
 .PHONY: all clean fclean re
 all: $(NAME)
