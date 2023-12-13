@@ -4,7 +4,7 @@ CC      =	c++
 
 CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
 
-INC     =	Harl.hpp
+HEADERS     =	Harl.hpp
 
 SRCS    =	main.cpp \
 			Harl.cpp
@@ -13,6 +13,8 @@ OBJS    =	$(SRCS:.cpp=.o)
 
 $(NAME): $(OBJS) $(INC)
 	$(CC) $(CPPFLAGS) $(INC) $(OBJS) -o $(NAME)
+
+$(OBJS): $(HEADERS)
 
 .PHONY: all clean fclean re
 all: $(NAME)

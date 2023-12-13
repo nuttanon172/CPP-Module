@@ -1,13 +1,13 @@
-NAME    =	harl2.0
+NAME    =	fixedpoint
 
 CC      =	c++
 
 CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
 
-HEADERS     =	Harl.hpp
+HEADERS     =	ClapTrap.hpp
 
-SRCS    =	main.cpp \
-			Harl.cpp
+SRCS    =	ClapTrap.cpp \
+			main.cpp
 
 OBJS    =	$(SRCS:.cpp=.o)
 
