@@ -7,10 +7,13 @@ int	main(void)
 	ClapTrap	player1("player1");
 	FragTrap	player3("player2");
 	FragTrap	player2(player3);
+	ScavTrap	player4;
 
-	for (int i = 0; i < 12; i++)
+	for (int i = 0; i < 11; i++)
 		player1.attack("Monster");
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 11; i++)
+		player4.attack("Monster");
+	for (int i = 0; i < 11; i++)
 		player2.highFivesGuys();
 	player1.takeDamage(10);
 	player1.beRepaired(1);
@@ -18,5 +21,6 @@ int	main(void)
 	player2.takeDamage(100);
 	player2.beRepaired(10);
 	player2.takeDamage(9);
+	player4.beRepaired(1);
 	return (EXIT_SUCCESS);
 }

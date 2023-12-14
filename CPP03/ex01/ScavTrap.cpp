@@ -1,8 +1,11 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(void) : ClapTrap("Unknown")
+ScavTrap::ScavTrap(void) : ClapTrap()
 {
-	std::cout << "ClapTrap " << this->_name << " is inheriting from ClapTrap" << std::endl;
+	this->_hp = 100;
+	this->_energy = 50;
+	this->_damage = 20;
+	std::cout << BLUE << "ScavTrap " << this->_name << " is inheriting from ClapTrap" << DEFAULT << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
@@ -10,18 +13,18 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	this->_hp = 100;
 	this->_energy = 50;
 	this->_damage = 20;
-	std::cout << "ScavTrap " << this->_name << " is inheriting from ClapTrap" << std::endl;
+	std::cout << BLUE << "ScavTrap " << this->_name << " is inheriting from ClapTrap" << DEFAULT << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap &obj) : ClapTrap(obj._name)
 {
 	*this = obj;
-	std::cout << "ScavTrap " << this->_name << " is inheriting from ClapTrap" << std::endl;
+	std::cout << BLUE << "ScavTrap " << this->_name << " is inheriting from ClapTrap" << DEFAULT << std::endl;
 }
 
 ScavTrap::~ScavTrap(void)
 {
-	std::cout << "ScavTrap "<< _name << " has destroyed" << std::endl;
+	std::cout << BLUE << "ScavTrap "<< _name << " has destroyed" << DEFAULT << std::endl;
 }
 
 ScavTrap	&ScavTrap::operator=(const ScavTrap &obj)

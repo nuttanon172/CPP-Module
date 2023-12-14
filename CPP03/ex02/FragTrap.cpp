@@ -1,32 +1,30 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(void) : ClapTrap("Unknown")
+FragTrap::FragTrap(void) : ClapTrap()
 {
-	this->_name = "Unknown";
 	this->_hp = 100;
 	this->_energy = 100;
 	this->_damage = 30;
-	std::cout << "FlagTrap " << _name << " has created" << std::endl;
+	std::cout << YELLOW << "FragTrap " << this->_name << " is inheriting from ClapTrap" << DEFAULT << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	this->_name = name;
 	this->_hp = 100;
 	this->_energy = 100;
 	this->_damage = 30;
-	std::cout << "FlagTrap " << _name << " has created" << std::endl;
+	std::cout << YELLOW << "FragTrap " << this->_name << " is inheriting from ClapTrap" << DEFAULT << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap &obj) : ClapTrap(obj._name)
 {
 	*this = obj;
-	std::cout << "FlagTrap " << _name << " has created" << std::endl;
+	std::cout << YELLOW << "FragTrap " << this->_name << " is inheriting from ClapTrap" << DEFAULT << std::endl;
 }
 
 FragTrap::~FragTrap(void)
 {
-	std::cout << "FlagTrap " << _name << " has detroyed" << std::endl;
+	std::cout << YELLOW << "FlagTrap " << _name << " has detroyed" << DEFAULT << std::endl;
 }
 
 FragTrap	&FragTrap::operator=(const FragTrap &obj)
@@ -49,5 +47,5 @@ void	FragTrap::highFivesGuys(void)
 		this->_energy -= 1;
 	}
 	else
-		std::cout << "FlagTrap " << this->_name << " does not have enough energy to highfive" << std::endl;	
+		std::cout << "FlagTrap " << this->_name << " does not have enough energy to highfive" << std::endl;
 }

@@ -1,6 +1,11 @@
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
 
+# define DEFAULT "\033[0m"
+# define GREEN "\033[1;32m"
+# define YELLOW "\033[1;33m"
+# define BLUE "\033[1;34m"
+
 # include <iostream>
 # include <cstdlib>
 
@@ -20,7 +25,6 @@ class	ClapTrap
 		void		attack(const std::string& target);
 		void		takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);
-
 };
 
 #endif
