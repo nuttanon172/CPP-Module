@@ -2,6 +2,7 @@
 # define HARL_HPP
 
 # include <iostream>
+# include <cstdlib>
 
 class	Harl
 {

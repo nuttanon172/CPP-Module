@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include <stdlib.h>
+# include <cstdlib>
 
 void	ft_replace(std::ifstream &inputFile, std::ofstream &outFile, std::string strFind, std::string strRep)
 {

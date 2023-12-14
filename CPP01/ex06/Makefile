@@ -1,8 +1,8 @@
 NAME    =	harlFilter
 
-CC      =	c++
+CXX      =	c++
 
-CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
+CXXFLAGS =	-Wall -Wextra -Werror -std=c++98
 
 HEADERS     =	Harl.hpp
 
@@ -12,7 +12,7 @@ SRCS    =	main.cpp \
 OBJS    =	$(SRCS:.cpp=.o)
 
 $(NAME): $(OBJS) $(INC)
-	$(CC) $(CPPFLAGS) $(INC) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(INC) $(OBJS) -o $(NAME)
 
 $(OBJS): $(HEADERS)
 

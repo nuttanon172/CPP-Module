@@ -1,8 +1,8 @@
 NAME    =	harl2.0
 
-CC      =	c++
+CXX      =	c++
 
-CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
+CXXFLAGS =	-Wall -Wextra -Werror -std=c++98
 
 HEADERS     =	Harl.hpp
 
@@ -12,7 +12,7 @@ SRCS    =	main.cpp \
 OBJS    =	$(SRCS:.cpp=.o)
 
 $(NAME): $(OBJS)
-	$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 $(OBJS): $(HEADERS)
 

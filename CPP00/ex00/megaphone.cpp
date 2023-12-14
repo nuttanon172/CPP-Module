@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cctype>
+#include <cstdlib>
 
 void	print_upper(char *av)
 {
