@@ -1,19 +1,19 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void) : _name("Unknow"), _hp(10), _energy(10), _damage(0)
+ClapTrap::ClapTrap(void) : _name("Unknown"), _hp(10), _energy(10), _damage(0)
 {
-	std::cout << _name << " has created" << std::endl;
+	std::cout << GREEN << "ClapTrap " << _name << " has created" << DEFAULT << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _energy(10), _damage(0)
 {
-	std::cout << "ClapTrap " << _name << " has created" << std::endl;
+	std::cout << GREEN << "ClapTrap " << _name << " has created" << DEFAULT << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap &obj)
 {
 	*this = obj;
-	std::cout << "ClapTrap " << _name << " has created" << std::endl;
+	std::cout << GREEN << "ClapTrap " << _name << " has created" << DEFAULT << std::endl;
 }
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap &obj)
@@ -30,7 +30,7 @@ ClapTrap	&ClapTrap::operator=(const ClapTrap &obj)
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "ClapTrap "<< _name << " has destroyed" << std::endl;
+	std::cout << GREEN << "ClapTrap "<< _name << " has destroyed" << DEFAULT << std::endl;
 }
 
 void	ClapTrap::attack(const std::string& target)
