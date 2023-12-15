@@ -5,7 +5,7 @@ WrongCat::WrongCat(void) : WrongAnimal("WrongCat")
 	std::cout << YELLOW << this->type << " has created" << DEFAULT << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &obj) : WrongAnimal(obj.type)
+WrongCat::WrongCat(const WrongCat &obj) : WrongAnimal(obj)
 {
 	std::cout << YELLOW << this->type << " has created" << DEFAULT << std::endl;
 }

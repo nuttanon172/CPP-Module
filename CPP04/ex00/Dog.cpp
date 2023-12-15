@@ -5,7 +5,7 @@ Dog::Dog(void) : Animal("Dog")
 	std::cout << YELLOW << this->type << " has created" << DEFAULT << std::endl;
 }
 
-Dog::Dog(const Dog &obj) : Animal(obj.type)
+Dog::Dog(const Dog &obj) : Animal(obj)
 {
 	std::cout << YELLOW << this->type << " has created" << DEFAULT << std::endl;
 }

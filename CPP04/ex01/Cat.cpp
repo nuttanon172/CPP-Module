@@ -6,7 +6,7 @@ Cat::Cat(void) : Animal("Cat")
 	std::cout << YELLOW << this->type << " has created" << DEFAULT << std::endl;
 }
 
-Cat::Cat(const Cat &obj) : Animal(obj.type)
+Cat::Cat(const Cat &obj) : Animal(obj)
 {
 	this->_brain = new Brain(*obj.getBrain());
 	std::cout << YELLOW << this->type << " has created" << DEFAULT << std::endl;
