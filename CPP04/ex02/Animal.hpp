@@ -20,7 +20,7 @@ class	Animal
 		Animal(const Animal &obj);
 		virtual ~Animal(void);
 		Animal	&operator=(const Animal &obj);
-		virtual void	makeSound(void) const;
+		virtual void	makeSound(void) const = 0;
 		std::string		getType(void) const;
 };
 
