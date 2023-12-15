@@ -18,7 +18,7 @@ Cat::Cat::~Cat(void)
 	std::cout << YELLOW << this->type << " has destroyed" << DEFAULT << std::endl;
 }
 
-Cat		&Cat::operator=(const Cat &obj)
+Cat	&Cat::operator=(const Cat &obj)
 {
 	if (this != &obj)
 	{	

@@ -18,7 +18,7 @@ Dog::Dog::~Dog(void)
 	std::cout << YELLOW << this->type <<" has destroyed" << DEFAULT << std::endl;
 }
 
-Dog		&Dog::operator=(const Dog &obj)
+Dog	&Dog::operator=(const Dog &obj)
 {
 	if (this != &obj)
 	{	
