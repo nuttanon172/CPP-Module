@@ -10,7 +10,7 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _energy(10), _damag
 	std::cout << GREEN << "ClapTrap " << _name << " has created" << DEFAULT << std::endl;
 }
 
-ClapTrap::ClapTrap(ClapTrap &obj)
+ClapTrap::ClapTrap(const ClapTrap &obj)
 {
 	*this = obj;
 	std::cout << GREEN << "ClapTrap " << _name << " has created" << DEFAULT << std::endl;
