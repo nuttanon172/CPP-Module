@@ -1,12 +1,12 @@
 #include "Cat.hpp"
 
-Cat::Cat(void) : Animal("Cat")
+Cat::Cat(void) : AAnimal("Cat")
 {
 	this->_brain = new Brain();
 	std::cout << YELLOW << this->type << " has created" << DEFAULT << std::endl;
 }
 
-Cat::Cat(const Cat &obj) : Animal(obj)
+Cat::Cat(const Cat &obj) : AAnimal(obj)
 {
 	this->_brain = new Brain(*obj.getBrain());
 	std::cout << YELLOW << this->type << " has created" << DEFAULT << std::endl;
@@ -21,7 +21,7 @@ Cat::Cat::~Cat(void)
 Cat	&Cat::operator=(const Cat &obj)
 {
 	if (this != &obj)
-	{	
+	{
 		this->type = obj.type;
 		this->_brain = new Brain(*obj.getBrain());
 	}
@@ -35,5 +35,5 @@ void	Cat::makeSound(void) const
 
 Brain	*Cat::getBrain(void) const
 {
-	return (this->_brain);	
+	return (this->_brain);
 }

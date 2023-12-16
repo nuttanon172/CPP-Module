@@ -1,5 +1,5 @@
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef AANIMAL_HPP
+# define AANIMAL_HPP
 
 # define DEFAULT "\033[0m"
 # define GREEN "\033[1;32m"
@@ -10,16 +10,16 @@
 # include <cstdlib>
 # include "Brain.hpp"
 
-class	Animal
+class	AAnimal
 {
 	protected:
 		std::string	type;
 	public:
-		Animal(void);
-		Animal(const std::string &type);
-		Animal(const Animal &obj);
-		virtual ~Animal(void);
-		Animal	&operator=(const Animal &obj);
+		AAnimal(void);
+		AAnimal(const std::string &type);
+		AAnimal(const AAnimal &obj);
+		virtual ~AAnimal(void);
+		AAnimal	&operator=(const AAnimal &obj);
 		virtual void	makeSound(void) const = 0;
 		std::string		getType(void) const;
 };

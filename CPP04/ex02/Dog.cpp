@@ -1,12 +1,12 @@
 #include "Dog.hpp"
 
-Dog::Dog(void) : Animal("Dog")
+Dog::Dog(void) : AAnimal("Dog")
 {
 	this->_brain = new Brain();
 	std::cout << YELLOW << this->type << " has created" << DEFAULT << std::endl;
 }
 
-Dog::Dog(const Dog &obj) : Animal(obj)
+Dog::Dog(const Dog &obj) : AAnimal(obj)
 {
 	this->_brain = new Brain(*obj.getBrain());
 	std::cout << YELLOW << this->type << " has created" << DEFAULT << std::endl;
@@ -21,7 +21,7 @@ Dog::Dog::~Dog(void)
 Dog	&Dog::operator=(const Dog &obj)
 {
 	if (this != &obj)
-	{	
+	{
 		this->type = obj.type;
 		this->_brain = new Brain(*obj.getBrain());
 	}
@@ -35,5 +35,5 @@ void	Dog::makeSound(void) const
 
 Brain	*Dog::getBrain(void) const
 {
-	return (this->_brain);	
+	return (this->_brain);
 }

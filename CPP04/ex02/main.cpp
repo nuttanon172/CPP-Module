@@ -4,7 +4,7 @@
 
 int	main(void)
 {
-	Animal *meta[10];
+	AAnimal *meta[10];
 	for (int i = 0; i < 5; i++)
 		meta[i] = new Cat();
 	for (int i = 5; i < 10; i++)
