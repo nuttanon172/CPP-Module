@@ -2,6 +2,7 @@
 # define CAT_HPP
 
 # include "AAnimal.hpp"
+# include "Brain.hpp"
 
 class	Cat : public AAnimal
 {
