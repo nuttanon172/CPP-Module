@@ -45,7 +45,7 @@ int	main(int ac, char **av)
 	}
 	size_t pos_l = filename.find_last_of('.');
 	std::string	outname = filename.substr(0, pos_l);
-	outname.append(".append");
+	outname.append(".replace");
 	inputFile.open(filename.c_str(), std::ios::in);
 	if (!inputFile.is_open())
 	{
