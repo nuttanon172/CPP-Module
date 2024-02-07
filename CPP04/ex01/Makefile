@@ -30,7 +30,7 @@ $(OBJ_DIR)/%.o: %.cpp $(HEADERS)
 all: $(NAME)
 
 clean:
-	@rm -rf $(OBJS)
+	@rm -rf $(OBJ_DIR)
 
 fclean: clean
 	@rm -f $(NAME)

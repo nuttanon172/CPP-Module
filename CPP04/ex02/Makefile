@@ -17,7 +17,7 @@ SRCS      = AAnimal.cpp \
             Brain.cpp \
             main.cpp
 
-OBJS      = $(patsubst %.cpp,$(OBJ_DIR)/%.o,$(SRCS))
+OBJS      =	$(patsubst %.cpp,$(OBJ_DIR)/%.o,$(SRCS))
 
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
