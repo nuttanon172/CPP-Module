@@ -1,32 +1,36 @@
-NAME    =	polymorph
+NAME      = polymorph
 
-CXX      =	c++
+CXX       = c++
 
-CXXFLAGS =	-Wall -Wextra -Werror -std=c++98
+CXXFLAGS  = -Wall -Wextra -Werror -std=c++98
 
-HEADERS     =	AAnimal.hpp \
-			Cat.hpp \
-			Dog.hpp \
-			Brain.hpp
+OBJ_DIR   = obj
 
-SRCS    =	AAnimal.cpp \
-			Cat.cpp \
-			Dog.cpp \
-			Brain.cpp \
-			main.cpp
+HEADERS   = AAnimal.hpp \
+            Cat.hpp \
+            Dog.hpp \
+            Brain.hpp
 
-OBJS    =	$(SRCS:.cpp=.o)
+SRCS      = AAnimal.cpp \
+            Cat.cpp \
+            Dog.cpp \
+            Brain.cpp \
+            main.cpp
+
+OBJS      = $(patsubst %.cpp,$(OBJ_DIR)/%.o,$(SRCS))
 
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
-$(OBJS): $(HEADERS)
+$(OBJ_DIR)/%.o: %.cpp $(HEADERS)
+	@mkdir -p $(OBJ_DIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 .PHONY: all clean fclean re
 all: $(NAME)
 
 clean:
-	@rm -rf $(OBJS)
+	@rm -rf $(OBJ_DIR)
 
 fclean: clean
 	@rm -f $(NAME)
