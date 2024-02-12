@@ -1,6 +1,6 @@
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon &club) : _name(name), _club(club.getType())
+HumanA::HumanA(const std::string &name, Weapon &club) : _name(name), _club(club.getType())
 {
 
 }

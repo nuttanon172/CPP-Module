@@ -22,6 +22,7 @@ Cat	&Cat::operator=(const Cat &obj)
 {
 	if (this != &obj)
 	{
+		delete this->_brain;
 		this->type = obj.type;
 		this->_brain = new Brain(*obj.getBrain());
 	}

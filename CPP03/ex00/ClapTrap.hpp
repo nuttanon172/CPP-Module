@@ -18,7 +18,7 @@ class	ClapTrap
 		unsigned int	_damage;
 	public:
 		ClapTrap(void);
-		ClapTrap(std::string name);
+		ClapTrap(const std::string &name);
 		ClapTrap(const ClapTrap &obj);
 		~ClapTrap(void);
 		ClapTrap	&operator=(const ClapTrap &obj);

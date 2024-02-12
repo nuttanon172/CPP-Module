@@ -9,7 +9,7 @@ class HumanA
 		std::string			_name;
 		const std::string	&_club;
 	public:
-		HumanA(std::string name, Weapon &club);
+		HumanA(const std::string &name, Weapon &club);
 		void	attack(void);
 };
 

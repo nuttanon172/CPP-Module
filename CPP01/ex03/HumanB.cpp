@@ -1,8 +1,8 @@
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name) : _name(name)
+HumanB::HumanB(const std::string &name) : _name(name)
 {
-
+	this->_club = NULL;
 }
 
 void	HumanB::setWeapon(Weapon &club)
@@ -12,5 +12,8 @@ void	HumanB::setWeapon(Weapon &club)
 
 void	HumanB::attack(void)
 {
-	std::cout << _name << " attack with their " << *_club << std::endl;
+	if (_club)
+		std::cout << _name << " attack with their " << *_club << std::endl;
+	else
+		std::cout << _name << " lost their club"<< std::endl;
 }

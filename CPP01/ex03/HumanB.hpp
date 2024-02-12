@@ -9,7 +9,7 @@ class HumanB
 		std::string			_name;
 		const std::string	*_club;
 	public:
-		HumanB(std::string name);
+		HumanB(const std::string &name);
 		void	setWeapon(Weapon &club);
 		void	attack(void);
 };

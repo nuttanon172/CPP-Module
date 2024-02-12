@@ -36,8 +36,8 @@ class	Fixed
 
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
-		float		toFloat(void) const;
-		int			toInt(void) const;
+		float	toFloat(void) const;
+		int		toInt(void) const;
 
 		static Fixed		&min(Fixed &fp1, Fixed &fp2);
 		static const Fixed	&min(const Fixed &fp1, const Fixed &fp2);

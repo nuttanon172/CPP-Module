@@ -15,6 +15,9 @@ int	main(void)
 		meta[i]->makeSound();
 		std::cout << std::endl;
 	}
+	Cat k("");
+	Cat test;
+	k = test;
 	for (int i = 0; i < 10; i++)
 		delete meta[i];
 	std::cout << "\n~~~Brain DeepCopy Test~~~\n" << std::endl;

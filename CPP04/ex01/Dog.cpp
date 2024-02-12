@@ -21,7 +21,8 @@ Dog::Dog::~Dog(void)
 Dog	&Dog::operator=(const Dog &obj)
 {
 	if (this != &obj)
-	{	
+	{
+		delete this->_brain;
 		this->type = obj.type;
 		this->_brain = new Brain(*obj.getBrain());
 	}
