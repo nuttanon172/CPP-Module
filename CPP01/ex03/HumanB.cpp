@@ -7,13 +7,13 @@ HumanB::HumanB(const std::string &name) : _name(name)
 
 void	HumanB::setWeapon(Weapon &club)
 {
-	_club = &club.getType();
+	this->_club = &club.getType();
 }
 
 void	HumanB::attack(void)
 {
-	if (_club)
-		std::cout << _name << " attack with their " << *_club << std::endl;
+	if (this->_club)
+		std::cout << _name << " attack with their " << *(this->_club) << std::endl;
 	else
 		std::cout << _name << " lost their club"<< std::endl;
 }
