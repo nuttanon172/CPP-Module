@@ -33,10 +33,10 @@ void	PhoneBook::printIndex(int i)
 	std::cout << std::endl;
 	std::cout << "\t--->>Index: " << i << "<<---" << std::endl;
 	std::cout << "FirstName: " << contact[i - 1].getFirstN() << std::endl;
-	std::cout << "LastName: " << contact[i - 1].getFirstN() << std::endl;
-	std::cout << "NickName: " << contact[i - 1].getFirstN() << std::endl;
-	std::cout << "PhoneNumber: " << contact[i - 1].getFirstN() << std::endl;
-	std::cout << "DarkestSecret: " << contact[i - 1].getFirstN() << std::endl;
+	std::cout << "LastName: " << contact[i - 1].getLastN() << std::endl;
+	std::cout << "NickName: " << contact[i - 1].getNickN() << std::endl;
+	std::cout << "PhoneNumber: " << contact[i - 1].getPhoneN() << std::endl;
+	std::cout << "DarkestSecret: " << contact[i - 1].getDarks() << std::endl;
 	for (int i = 0; i < 46; i++)
 		std::cout << "-";
 	std::cout << std::endl;

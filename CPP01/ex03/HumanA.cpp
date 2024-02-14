@@ -7,5 +7,5 @@ HumanA::HumanA(const std::string &name, Weapon &club) : _name(name), _club(club.
 
 void	HumanA::attack(void)
 {
-	std::cout << _name << " attack with their " << _club << std::endl;
+	std::cout << this->_name << " attack with their " << this->_club << std::endl;
 }
