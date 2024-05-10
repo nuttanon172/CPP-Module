@@ -68,6 +68,20 @@ void	Bureaucrat::decGrade()
 		_grade += 1;	
 }
 
+void	Bureaucrat::signForm(Form &obj)
+{
+	if (obj.getSigned())
+		std::cout << _name << " couldn't sign " << obj.getName() << " because form already signed.\n";
+	else if (_grade > obj.getReq())
+		std::cout << _name << " couldn't sign " << obj.getName() << " because Bureaucrat'grade too low.\n";
+	else
+	{
+		obj.beSigned(*this);
+		std::cout << _name << " signed " << obj.getName();
+	}
+
+}
+
 std::ostream&	operator<<(std::ostream& os, const Bureaucrat& obj)
 {
 	os << obj.getName() << ", bureaucrat grade " << obj.getGrade() << ".";

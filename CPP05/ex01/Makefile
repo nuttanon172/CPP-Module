@@ -6,10 +6,12 @@ CXXFLAGS  = -Wall -Wextra -Werror -std=c++98
 
 OBJ_DIR   = obj
 
-HEADERS   = Bureaucrat.hpp
+HEADERS   = Bureaucrat.hpp \
+			Form.hpp
 
 SRCS      = Bureaucrat.cpp \
-            main.cpp \
+			Form.cpp \
+            main.cpp
 
 OBJS      =	$(patsubst %.cpp,$(OBJ_DIR)/%.o,$(SRCS))
 
