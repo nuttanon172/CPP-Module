@@ -33,7 +33,7 @@ void	Harl::complain(std::string level)
 	std::string	cmd[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	for (size_t i = 0; i < 4; i++)
 	{
-		if (level == cmd[i])
+		for (;level == cmd[i];)
 		{	
 			(this->*func[i])();
 			std::cout << std::endl;
