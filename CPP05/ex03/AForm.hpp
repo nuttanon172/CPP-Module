@@ -25,6 +25,11 @@ class AForm
 		const int &getReq() const;
 		const int &getExec() const;
 		virtual void execute(const Bureaucrat &executor) const = 0;
+	class NoSignedExeception : public std::exception
+	{
+		public:
+            virtual const char* what() const throw();
+	};
 	class GradeTooHighExeception : public std::exception
     {
         public:

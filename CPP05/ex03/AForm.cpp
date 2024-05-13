@@ -61,6 +61,11 @@ const int	&AForm::getExec() const
 	return (_exec_grade);
 }
 
+const char* AForm::NoSignedExeception::what() const throw()
+{
+	return ("Form is not Signed");
+}
+
 const char* AForm::GradeTooHighExeception::what() const throw()
 {
 	return ("Grade Too High");

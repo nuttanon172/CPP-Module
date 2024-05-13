@@ -33,6 +33,8 @@ void	RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {
 	if (executor.getGrade() <= this->getExec())
 	{
+		if (this->getSigned() == false)
+			throw AForm::NoSignedExeception();
 		std::srand(std::time(0));
 		if (std::rand() % 2 == 0)
 			std::cout << _target << " has been robotomized successfully 50% of the time.\n";

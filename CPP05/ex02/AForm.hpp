@@ -16,7 +16,7 @@ class AForm
 	public:
 		AForm();
 		AForm(const std::string &name, const int &sign_grade, const int &exec_grade);
-		~AForm();
+		virtual ~AForm();
 		AForm(const AForm &obj);
 		AForm &operator=(const AForm &obj);
 		void beSigned(const Bureaucrat &obj);
@@ -25,6 +25,11 @@ class AForm
 		const int &getReq() const;
 		const int &getExec() const;
 		virtual void execute(const Bureaucrat &executor) const = 0;
+	class NoSignedExeception : public std::exception
+	{
+		public:
+            virtual const char* what() const throw();
+	};
 	class GradeTooHighExeception : public std::exception
     {
         public:

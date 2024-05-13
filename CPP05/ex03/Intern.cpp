@@ -24,6 +24,7 @@ Intern &Intern::operator=(const Intern &obj)
 AForm *Intern::makeForm(const std::string &form_type, const std::string &target)
 {
 	int sw = 4;
+	AForm *form;
 	std::string	type[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
 	for (int i = 0; i < 3; i++)
 	{
@@ -33,16 +34,21 @@ AForm *Intern::makeForm(const std::string &form_type, const std::string &target)
 			break ;
 		}
 	}
+	form = NULL;
 	switch (sw)
 	{
 		case 0:
-			return (new ShrubberyCreationForm(target));
+			form = new ShrubberyCreationForm(target);
+			break ;
 		case 1:
-			return (new RobotomyRequestForm(target));
+			form = new RobotomyRequestForm(target);
+			break ;
 		case 2:
-			return (new PresidentialPardonForm(target));
+			form = new PresidentialPardonForm(target);
+			break ;
 		default:
-			std::cerr << "Form name passed as parameter doesn't exist" << std::endl;
+			std::cerr << "Form name passed as parameter doesn't exist\n";
 	}
-	return (NULL);
+	std::cout << "Intern creates " << form_type + " form" << std::endl;
+	return (form);
 }
