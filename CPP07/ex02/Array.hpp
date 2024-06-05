@@ -19,28 +19,32 @@ public:
 	Array<T>(unsigned int n)
 	{
 		arr_size = n;
-		arr_data = new T(n);
+		arr_data = new T[n];
 		std::cout << "Array has created " << n << " elements" << std::endl;
 	}
 	Array<T>(const Array &obj)
 	{
-		arr_data = new T(obj.size());
+		arr_size = obj.size();
+		arr_data = new T[obj.size()];
 		for (unsigned int i = 0; i < obj.size();i++)
 			arr_data[i] = obj.arr_data[i];
 	}
 	Array<T> &operator=(const Array<T> &obj)
 	{
-		if (this != obj)
+		if (this != &obj)
 		{
-			delete arr_data;
-			arr_data = new T(obj);
+			delete[] arr_data;
+			arr_data = new T[obj.size()];
 			arr_size = obj.size();
+			for (unsigned int i = 0; i < obj.size();i++)
+				arr_data[i] = obj.arr_data[i];
 		}
 		return (*this);
 	}
 	~Array<T>()
 	{
-		delete arr_data;
+		if (arr_data)
+			delete[] arr_data;
 		std::cout << "Array has destroyed" << std::endl;
 	}
 	unsigned int size() const
@@ -49,7 +53,7 @@ public:
 	}
 	T &operator[](const unsigned int index) const
 	{
-		if (index >= arr_size)
+		if (index < 0 || index >= arr_size)
 			throw Array<T>::OutOfBoundException();
 		else
 			return (arr_data[index]);
