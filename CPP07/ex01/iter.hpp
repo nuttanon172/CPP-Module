@@ -3,6 +3,7 @@
 
 #include <iostream>
 
+// void (*func)(T) or Func from template type
 template <typename T, typename Func>
 void iter(T *arr, size_t size, Func func)
 {
