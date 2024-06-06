@@ -18,7 +18,6 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 
 FragTrap::FragTrap(const FragTrap &obj) : ClapTrap(obj)
 {
-	*this = obj;
 	std::cout << YELLOW << "FragTrap " << this->_name << " is inheriting from ClapTrap" << DEFAULT << std::endl;
 }
 

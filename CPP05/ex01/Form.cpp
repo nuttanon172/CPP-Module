@@ -19,9 +19,9 @@ Form::~Form()
 	std::cout << _name << ": has destroyed\n";
 }
 
-Form::Form(const Form &obj) : _name(obj.getName()), _sign_grade(obj.getReq()), _exec_grade(obj.getExec())
+Form::Form(const Form &obj) : _name(obj.getName()), _sign(obj.getSigned()), _sign_grade(obj.getReq()), _exec_grade(obj.getExec())
 {
-	*this = obj;
+
 }
 
 Form &Form::operator=(const Form &obj)

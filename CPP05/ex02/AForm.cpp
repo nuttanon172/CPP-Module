@@ -19,9 +19,9 @@ AForm::~AForm()
 	std::cout << _name << ": has destroyed\n";
 }
 
-AForm::AForm(const AForm &obj) : _name(obj.getName()), _sign_grade(obj.getReq()), _exec_grade(obj.getExec())
+AForm::AForm(const AForm &obj) : _name(obj.getName()), _sign(obj.getSigned()), _sign_grade(obj.getReq()), _exec_grade(obj.getExec())
 {
-	*this = obj;
+
 }
 
 AForm &AForm::operator=(const AForm &obj)

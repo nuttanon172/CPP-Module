@@ -12,7 +12,7 @@ Animal::Animal(const std::string &type) : type(type)
 
 Animal::Animal(const Animal &obj)
 {
-	*this = obj;
+	this->type = obj.type;
 	std::cout << GREEN << "Animal " << this->type << " has created" << DEFAULT << std::endl;
 }
 

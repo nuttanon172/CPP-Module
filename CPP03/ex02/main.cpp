@@ -22,5 +22,9 @@ int	main(void)
 	player2.beRepaired(10);
 	player2.takeDamage(9);
 	player4.beRepaired(1);
+	ScavTrap	p1("p1");
+	p1.takeDamage(50);
+	ScavTrap	p2(p1);
+	p2.takeDamage(50);
 	return (EXIT_SUCCESS);
 }

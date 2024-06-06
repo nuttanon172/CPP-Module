@@ -8,7 +8,8 @@ Brain::Brain(void)
 
 Brain::Brain(const Brain &obj)
 {
-	*this = obj;
+	for (int i = 0; i < 100; i++)
+		this->ideas[i] = obj.ideas[i];
 	std::cout << BLUE << "Brain has created" << DEFAULT << std::endl;
 }
 

@@ -18,9 +18,9 @@ Bureaucrat::~Bureaucrat()
 	std::cout << _name << "(" << _grade << ")" << " is dead\n";
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &obj) : _name(obj.getName())
+Bureaucrat::Bureaucrat(const Bureaucrat &obj) : _name(obj.getName()), _grade(obj.getGrade())
 {
-	*this = obj;
+
 }
 
 Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &obj)

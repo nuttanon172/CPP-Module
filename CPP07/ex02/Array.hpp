@@ -34,8 +34,8 @@ public:
 		if (this != &obj)
 		{
 			delete[] arr_data;
-			arr_data = new T[obj.size()];
 			arr_size = obj.size();
+			arr_data = new T[obj.size()];
 			for (unsigned int i = 0; i < obj.size();i++)
 				arr_data[i] = obj.arr_data[i];
 		}
@@ -51,9 +51,9 @@ public:
 	{ 
 		return (arr_size); 
 	}
-	T &operator[](const unsigned int index) const
+	T &operator[](unsigned int index) const
 	{
-		if (index < 0 || index >= arr_size)
+		if (index >= arr_size)
 			throw Array<T>::OutOfBoundException();
 		else
 			return (arr_data[index]);

@@ -9,7 +9,7 @@ Fixed::Fixed(void)
 
 Fixed::Fixed(const Fixed &obj)
 {
-	*this = obj;
+	this->_fp_nbr = obj.getRawBits();
 }
 
 Fixed::Fixed(const int _fp_nbr)

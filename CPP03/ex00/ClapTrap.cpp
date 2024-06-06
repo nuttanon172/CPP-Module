@@ -12,7 +12,10 @@ ClapTrap::ClapTrap(const std::string &name) : _name(name), _hp(10), _energy(10),
 
 ClapTrap::ClapTrap(const ClapTrap &obj)
 {
-	*this = obj;
+	this->_name = obj._name;
+	this->_hp = obj._hp;
+	this->_energy = obj._energy;
+	this->_damage = obj._damage;
 	std::cout << GREEN << "ClapTrap " << _name << " has created" << DEFAULT << std::endl;
 }
 
@@ -58,7 +61,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 		this->_hp = 0;
 	}
 	if (!this->_hp)
-		std::cout << "ClapTRap " << this->_name << " is dead" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " is dead" << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)

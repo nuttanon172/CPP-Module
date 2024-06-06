@@ -12,7 +12,7 @@ WrongAnimal::WrongAnimal(const std::string &type) : type(type)
 
 WrongAnimal::WrongAnimal(const WrongAnimal &obj)
 {
-	*this = obj;
+	this->type = obj.type;
 	std::cout << BLUE << "WrongAnimal " << this->type << " has created" << DEFAULT << std::endl;
 }
 

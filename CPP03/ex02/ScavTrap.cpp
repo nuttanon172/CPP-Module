@@ -16,9 +16,8 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	std::cout << BLUE << "ScavTrap " << this->_name << " is inheriting from ClapTrap" << DEFAULT << std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap &obj) : ClapTrap(obj)
+ScavTrap::ScavTrap(const ScavTrap &obj) : ClapTrap(obj)
 {
-	*this = obj;
 	std::cout << BLUE << "ScavTrap " << this->_name << " is inheriting from ClapTrap" << DEFAULT << std::endl;
 }
 

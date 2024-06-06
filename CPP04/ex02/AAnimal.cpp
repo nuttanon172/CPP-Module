@@ -12,7 +12,7 @@ AAnimal::AAnimal(const std::string &type) : type(type)
 
 AAnimal::AAnimal(const AAnimal &obj)
 {
-	*this = obj;
+	this->type = obj.type;
 	std::cout << GREEN << "AAnimal " << this->type << " has created" << DEFAULT << std::endl;
 }
 
