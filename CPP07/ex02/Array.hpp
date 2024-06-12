@@ -13,7 +13,7 @@ public:
 	Array<T>()
 	{
 		arr_size = 0;
-		arr_data = NULL;
+		arr_data = new T[0];
 		std::cout << "Array has created" << std::endl;
 	}
 	Array<T>(unsigned int n)
