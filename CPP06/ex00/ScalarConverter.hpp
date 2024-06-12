@@ -3,7 +3,8 @@
 
 #include <iostream>
 #include <exception>
-#include <limit>
+#include <limits>
+#include <cctype>
 
 class ScalarConverter{
 private:
@@ -11,6 +12,7 @@ private:
 	int _i;
 	float _f;
 	double _d;
+	bool _impossible;
 	std::string _str;
 public:
 	ScalarConverter();
@@ -18,6 +20,10 @@ public:
 	ScalarConverter &operator=(const ScalarConverter &obj);
 	~ScalarConverter();
 	static void convert(std::string str);
+	void printChar();
+	void printInt();
+	void printFloat();
+	void printDouble();
 	class NonDisplayableExeception : public std::exception
 	{
 		public:
@@ -29,5 +35,7 @@ public:
 			virtual const char* what() const throw();
 	};
 };
+
+void func(std::string str);
 
 #endif
