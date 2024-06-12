@@ -20,6 +20,7 @@ public:
 	ScalarConverter &operator=(const ScalarConverter &obj);
 	~ScalarConverter();
 	static void convert(std::string str);
+	void func(std::string str);
 	void printChar();
 	void printInt();
 	void printFloat();
@@ -35,7 +36,5 @@ public:
 			virtual const char* what() const throw();
 	};
 };
-
-void func(std::string str);
 
 #endif
