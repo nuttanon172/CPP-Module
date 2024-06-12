@@ -4,7 +4,7 @@ int main(int ac, char **av)
 {
 	try {
 		if (ac != 2)
-			std::cerr << "Program take 1 argument!!" << std::endl;
+			throw std::runtime_error("Program take 1 argument!!");
 		ScalarConverter::convert(av[1]);
 	}
 	catch (std::exception &e)

@@ -5,6 +5,8 @@
 #include <exception>
 #include <limits>
 #include <cctype>
+#include <iomanip>
+#include <cstdlib>
 
 class ScalarConverter{
 private:
@@ -20,7 +22,7 @@ public:
 	ScalarConverter &operator=(const ScalarConverter &obj);
 	~ScalarConverter();
 	static void convert(std::string str);
-	void func(std::string str);
+	void printData(std::string str);
 	void printChar();
 	void printInt();
 	void printFloat();

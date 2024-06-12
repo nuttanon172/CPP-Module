@@ -6,26 +6,40 @@ ScalarConverter::ScalarConverter()
 	_i = 0;
 	_f = 0;
 	_d = 0;
-	_impossible = false;
+	_impossible = true;
 	_str = "";
 }
 
 ScalarConverter::ScalarConverter(const ScalarConverter &obj)
 {
-
+	_c = obj._c;
+	_i = obj._i;
+	_f = obj._f;
+	_d = obj._d;
+	_impossible = obj._impossible;
+	_str = obj._str;
 }
 
-//ScalarConverter &ScalarConverter::operator=(const ScalarConverter &obj)
-//{
-
-//}
+ScalarConverter &ScalarConverter::operator=(const ScalarConverter &obj)
+{
+	if (this != &obj)
+	{
+		_c = obj._c;
+		_i = obj._i;
+		_f = obj._f;
+		_d = obj._d;
+		_impossible = obj._impossible;
+		_str = obj._str;
+	}
+	return (*this);
+}
 
 ScalarConverter::~ScalarConverter()
 {
 
 }
 
-void ScalarConverter::func(std::string str)
+void ScalarConverter::printData(std::string str)
 {
 	_str = str;
 	if (_str == "nan")
@@ -36,36 +50,36 @@ void ScalarConverter::func(std::string str)
 		_d = -std::numeric_limits<double>::infinity();
 	else
 	{
+		_impossible = false;
 		_d = strtod(str.c_str(), NULL);
 		if (_str[0] != '0' && _d == 0)
 			throw NonDisplayableExeception();
 		if (_d > std::numeric_limits<int>::max() || _d < std::numeric_limits<int>::min())
-			_impossible = true;
-		_c = static_cast<char>(_d);
-		_i = static_cast<int>(_d);
-		_f = static_cast<float>(_d);
+			throw ImpossibleExeception();
 	}
+	_c = static_cast<char>(_d);
+	_i = static_cast<int>(_d);
+	_f = static_cast<float>(_d);
 	printChar();
-	printDouble();
-	printFloat();
 	printInt();
+	printFloat();
+	printDouble();
 } 
 
 void ScalarConverter::convert(std::string str)
 {
 	ScalarConverter sc;
-	sc.func(str);
+	sc.printData(str);
 }
 
 void ScalarConverter::printChar()
 {
 	try {
-		if (_d == -std::numeric_limits<double>::infinity() || _d == std::numeric_limits<double>::infinity() || _d == std::numeric_limits<double>::quiet_NaN())
+		if (_d == -std::numeric_limits<double>::infinity() || _d == std::numeric_limits<double>::infinity() || \
+			_d == std::numeric_limits<double>::quiet_NaN() || _impossible)
 			throw ImpossibleExeception();
 		else if (!isprint(_c))
 			throw NonDisplayableExeception();
-		else if (_impossible)
-			throw ImpossibleExeception();
 		else
 			std::cout << "char: " << _c << '\n';
 	}
@@ -78,9 +92,8 @@ void ScalarConverter::printChar()
 void ScalarConverter::printInt()
 {
 	try {
-		if (_d == -std::numeric_limits<double>::infinity() || _d == std::numeric_limits<double>::infinity() || _d == std::numeric_limits<double>::quiet_NaN())
-			throw ImpossibleExeception();
-		else if (_impossible)
+		if (_d == -std::numeric_limits<double>::infinity() || _d == std::numeric_limits<double>::infinity() || \
+			_d == std::numeric_limits<double>::quiet_NaN() || _impossible)
 			throw ImpossibleExeception();
 		else
 			std::cout << "int: " << _i << '\n';
@@ -95,11 +108,9 @@ void ScalarConverter::printFloat()
 {
 	try {
 		if (_d == -std::numeric_limits<double>::infinity() || _d == std::numeric_limits<double>::infinity())
-			throw ImpossibleExeception();
-		else if (_impossible)
-			throw ImpossibleExeception();		
+			throw ImpossibleExeception();	
 		else
-			std::cout << "float: " << _f << 'f' << '\n';
+			std::cout << std::fixed << "float: " << std::setprecision(1) << _f << 'f' << '\n';
 	}
 	catch (std::exception &e)
 	{
@@ -111,11 +122,9 @@ void ScalarConverter::printDouble()
 {
 	try {
 		if (_d == -std::numeric_limits<double>::infinity() || _d == std::numeric_limits<double>::infinity())
-			throw ImpossibleExeception();
-		else if (_impossible)
-			throw ImpossibleExeception();		
+			throw ImpossibleExeception();	
 		else
-			std::cout << "double: " << _d << '\n';
+			std::cout << "double: " << std::setprecision(1) << _d << '\n';
 	}
 	catch (std::exception &e)
 	{
