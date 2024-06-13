@@ -16,5 +16,4 @@ void easyfind(const T &container, const int &nbr)
 		throw std::out_of_range("parameter not found");
 }
 
-
 #endif

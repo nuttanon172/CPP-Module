@@ -44,7 +44,7 @@ void ScalarConverter::printData(std::string str)
 	_str = str;
 	if (_str == "nan")
 		_d = std::numeric_limits<double>::quiet_NaN();
-	else if (_str == "+inf" || _str == "+inff")
+	else if (_str == "inf" || _str == "inff" || _str == "+inf" || _str == "+inff")
 		_d = std::numeric_limits<double>::infinity();
 	else if (_str == "-inf" || _str == "-inff")
 		_d = -std::numeric_limits<double>::infinity();
@@ -53,9 +53,11 @@ void ScalarConverter::printData(std::string str)
 		_impossible = false;
 		_d = strtod(str.c_str(), NULL);
 		if (_str[0] != '0' && _d == 0)
-			throw NonDisplayableExeception();
-		if (_d > std::numeric_limits<int>::max() || _d < std::numeric_limits<int>::min())
-			throw ImpossibleExeception();
+			throw std::runtime_error("Convert failed");
+		if (_d > std::numeric_limits<int>::max())
+			throw std::overflow_error("Over flow numeric");
+		else if (_d < std::numeric_limits<int>::min())
+			throw std::underflow_error("Under flow numeric");
 	}
 	_c = static_cast<char>(_d);
 	_i = static_cast<int>(_d);
@@ -64,7 +66,7 @@ void ScalarConverter::printData(std::string str)
 	printInt();
 	printFloat();
 	printDouble();
-} 
+}
 
 void ScalarConverter::convert(std::string str)
 {
@@ -108,7 +110,7 @@ void ScalarConverter::printFloat()
 {
 	try {
 		if (_d == -std::numeric_limits<double>::infinity() || _d == std::numeric_limits<double>::infinity())
-			throw ImpossibleExeception();	
+			throw ImpossibleExeception();
 		else
 			std::cout << std::fixed << "float: " << std::setprecision(1) << _f << 'f' << '\n';
 	}
@@ -122,7 +124,7 @@ void ScalarConverter::printDouble()
 {
 	try {
 		if (_d == -std::numeric_limits<double>::infinity() || _d == std::numeric_limits<double>::infinity())
-			throw ImpossibleExeception();	
+			throw ImpossibleExeception();
 		else
 			std::cout << "double: " << std::setprecision(1) << _d << '\n';
 	}

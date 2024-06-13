@@ -18,7 +18,7 @@ public:
 	Span &operator=(const Span &obj);
 	~Span();
 	void addNumber(int nbr);
-	void addNumber(std::vector<int>const_iterator it1, std::vector<int>const_iterator it2);
+	void addNumber(std::vector<int>::const_iterator it1, std::vector<int>::const_iterator it2);
 	int shortestSpan();
 	int longestSpan();
 	void printContainer();
