@@ -7,6 +7,7 @@
 #include <cctype>
 #include <iomanip>
 #include <cstdlib>
+#include <cstring>
 
 class ScalarConverter{
 private:

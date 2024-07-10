@@ -166,8 +166,7 @@ void isCorrect(char *av)
 			count_dot++;
 		else if (av[i] < '0' || av[i] > '9')
 			throw std::runtime_error("Convert failed");
-		if ((av[i] == 'f' && av[i + 1] != '\0') || \
-			(av[i] == '.' && (av[i + 1] < '0' || av[i + 1] > '9')))
+		if ((av[i] == 'f' && av[i + 1] != '\0') || (av[i] == 'f' && !count_dot))
 			throw std::runtime_error("Convert failed");
 		i++;
 	}
