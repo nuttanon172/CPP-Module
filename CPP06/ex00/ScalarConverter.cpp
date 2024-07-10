@@ -80,7 +80,7 @@ void ScalarConverter::printChar()
 		if (_d == -std::numeric_limits<double>::infinity() || _d == std::numeric_limits<double>::infinity() || \
 			_d == std::numeric_limits<double>::quiet_NaN() || _impossible)
 			throw ImpossibleExeception();
-		else if (!isprint(_c))
+		else if (!isprint(_c) || _i < 0 || _i > 127)
 			throw NonDisplayableExeception();
 		else
 			std::cout << "char: " << _c << '\n';
@@ -142,4 +142,33 @@ const char	*ScalarConverter::NonDisplayableExeception::what() const throw()
 const char	*ScalarConverter::ImpossibleExeception::what() const throw()
 {
 	return ("impossible");
+}
+
+void isCorrect(char *av)
+{
+	size_t	i = 0;
+	size_t	count_f = 0;
+	size_t	count_dot = 0;
+	size_t	count_arithmetic = 0;
+
+	if (!av)
+		return ;
+	while (av[i])
+	{
+		if (!strcmp(av, "nan") || !strcmp(av, "inf") || !strcmp(av, "inff") || \
+			!strcmp(av, "+inf") || !strcmp(av, "+inff") || !strcmp(av, "-inf") || !strcmp(av, "-inff"))
+			return ;
+		else if ((av[0] == '+' || av[0] == '-' ) && !count_arithmetic)
+			count_arithmetic++;
+		else if (av[i] == 'f' && !count_f)
+			count_f++;
+		else if (av[i] == '.' && !count_dot)
+			count_dot++;
+		else if (av[i] < '0' || av[i] > '9')
+			throw std::runtime_error("Convert failed");
+		if ((av[i] == 'f' && av[i + 1] != '\0') || \
+			(av[i] == '.' && (av[i + 1] < '0' || av[i + 1] > '9')))
+			throw std::runtime_error("Convert failed");
+		i++;
+	}
 }

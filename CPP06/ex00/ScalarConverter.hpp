@@ -39,4 +39,6 @@ public:
 	};
 };
 
+void isCorrect(char *av);
+
 #endif
