@@ -1,4 +1,4 @@
-NAME      = span
+NAME      = mutant
 
 CXX       = c++
 
@@ -6,10 +6,9 @@ CXXFLAGS  = -Wall -Wextra -Werror -std=c++98
 
 OBJ_DIR   = obj
 
-HEADERS   = Span.hpp
+HEADERS   = MutantStack.hpp
 
-SRCS      = Span.cpp \
-			main.cpp
+SRCS      = main.cpp
 
 OBJS      =	$(patsubst %.cpp,$(OBJ_DIR)/%.o,$(SRCS))
 

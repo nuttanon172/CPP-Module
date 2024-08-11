@@ -7,10 +7,10 @@ void test4();
 
 int main()
 {
+	test4();
 	test1();
 	test2();
 	test3();
-	test4();
 }
 
 void test1()
@@ -72,12 +72,16 @@ void test3()
 
 void test4()
 {
-	std::cout << "---------------- Test 4 ----------------" << std::endl;
+	std::cout << "----------- 10K Numbers Test -----------" << std::endl;
 	try {
-		//addNumber 10k
-		Span sp = Span(10000);
-		for (int i = 1;i <= 10000;i++)
-			sp.addNumber(i);
+		/* Create random number container */
+		std::srand(std::time(0));
+		std::vector<int> tmpVec(10000);
+		std::generate(tmpVec.begin(), tmpVec.end(), std::rand);
+
+		Span sp(tmpVec.size());
+		sp.addNumber(tmpVec.begin(), tmpVec.end());
+		sp.printContainer();
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
 	}

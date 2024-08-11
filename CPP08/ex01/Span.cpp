@@ -25,18 +25,22 @@ Span::~Span()
 void Span::addNumber(int nbr)
 {
 	if (container.size() == N)
-		throw std::overflow_error("container already max!!");
+		throw std::overflow_error("container is full!!");
 	container.push_back(nbr);
 }
 
-void Span::addNumber(std::vector<int>const_iterator it1, std::vector<int>const_iterator it2)
+void Span::addNumber(std::vector<int>::const_iterator it1, std::vector<int>::const_iterator it2)
 {
-
+	if (container.size() == N)
+		throw std::overflow_error("container is full!!");
+	container.insert(container.end(), it1, it2);
+	if (container.size() > N)
+		throw std::overflow_error("container is overflow!!");
 }
 
 int Span::shortestSpan()
 {
-	if (!container.size() || container.size() == 1)
+	if (container.size() < 2)
 		throw std::out_of_range("container is out of range!!");
 	int tmp = abs(container[0] - container[1]);
 	for (std::vector<int>::size_type i = 0;i < container.size();i++)
@@ -52,7 +56,7 @@ int Span::shortestSpan()
 
 int Span::longestSpan()
 {
-	if (!container.size() || container.size() == 1)
+	if (container.size() < 2)
 		throw std::out_of_range("container is out of range!!");
 	std::vector<int>::const_iterator max_it = std::max_element(container.begin(), container.end());
 	std::vector<int>::const_iterator min_it = std::min_element(container.begin(), container.end());
