@@ -2,7 +2,6 @@
 
 PresidentialPardonForm::PresidentialPardonForm(void) : AForm("PresidentialPardon", 25, 5), _target("Unknow")
 {
-
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : AForm("PresidentialPardon", 25, 5)
@@ -17,10 +16,9 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &obj
 
 PresidentialPardonForm::~PresidentialPardonForm(void)
 {
-
 }
 
-PresidentialPardonForm	&PresidentialPardonForm::operator=(const PresidentialPardonForm &obj)
+PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &obj)
 {
 	if (this != &obj)
 	{
@@ -29,7 +27,7 @@ PresidentialPardonForm	&PresidentialPardonForm::operator=(const PresidentialPard
 	return (*this);
 }
 
-void	PresidentialPardonForm::execute(const Bureaucrat &executor) const
+void PresidentialPardonForm::execute(const Bureaucrat &executor) const
 {
 	if (executor.getGrade() <= this->getExec())
 	{

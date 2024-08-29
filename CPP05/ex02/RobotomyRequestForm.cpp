@@ -2,7 +2,6 @@
 
 RobotomyRequestForm::RobotomyRequestForm(void) : AForm("RobotomyRequest", 72, 45), _target("Unknow")
 {
-
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm("RobotomyRequest", 72, 45)
@@ -17,10 +16,9 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &obj) : AForm
 
 RobotomyRequestForm::~RobotomyRequestForm(void)
 {
-
 }
 
-RobotomyRequestForm	&RobotomyRequestForm::operator=(const RobotomyRequestForm &obj)
+RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &obj)
 {
 	if (this != &obj)
 	{
@@ -29,7 +27,7 @@ RobotomyRequestForm	&RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 	return (*this);
 }
 
-void	RobotomyRequestForm::execute(const Bureaucrat &executor) const
+void RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {
 	if (executor.getGrade() <= this->getExec())
 	{

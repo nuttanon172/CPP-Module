@@ -18,7 +18,7 @@ Brain::~Brain(void)
 	std::cout << BLUE << "Brain has destroyed" << DEFAULT << std::endl;
 }
 
-Brain	&Brain::operator=(const Brain &obj)
+Brain &Brain::operator=(const Brain &obj)
 {
 	if (this != &obj)
 	{
@@ -28,15 +28,14 @@ Brain	&Brain::operator=(const Brain &obj)
 	return (*this);
 }
 
-void	Brain::displayIdeas(void) const
+void Brain::displayIdeas(void) const
 {
 	for (int i = 0; i < 100; i++)
 		std::cout << this->ideas[i] << " ";
 	std::cout << std::endl;
-
 }
 
-void	Brain::setIdeas(const std::string ideas)
+void Brain::setIdeas(const std::string ideas)
 {
 	for (int i = 0; i < 100; i++)
 		this->ideas[i] = ideas;

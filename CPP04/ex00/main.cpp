@@ -2,11 +2,11 @@
 #include "Dog.hpp"
 #include "WrongCat.hpp"
 
-int	main(void)
+int main(void)
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	const Animal *meta = new Animal();
+	const Animal *j = new Dog();
+	const Animal *i = new Cat();
 
 	std::cout << meta->getType() << ": ";
 	meta->makeSound();
@@ -18,10 +18,11 @@ int	main(void)
 	delete i;
 	delete meta;
 
-	std::cout << "\n~~~WrongTest~~~\n" << std::endl;
+	std::cout << "\n~~~WrongTest~~~\n"
+			  << std::endl;
 
-	const WrongAnimal* wrongAnimal = new WrongAnimal();
-	const WrongAnimal* wrongCat = new WrongCat();
+	const WrongAnimal *wrongAnimal = new WrongAnimal();
+	const WrongAnimal *wrongCat = new WrongCat();
 
 	std::cout << wrongAnimal->getType() << ": ";
 	wrongAnimal->makeSound();

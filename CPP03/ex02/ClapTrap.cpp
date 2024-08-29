@@ -19,7 +19,7 @@ ClapTrap::ClapTrap(const ClapTrap &obj)
 	std::cout << GREEN << "ClapTrap " << _name << " has created" << DEFAULT << std::endl;
 }
 
-ClapTrap	&ClapTrap::operator=(const ClapTrap &obj)
+ClapTrap &ClapTrap::operator=(const ClapTrap &obj)
 {
 	if (this != &obj)
 	{
@@ -33,22 +33,22 @@ ClapTrap	&ClapTrap::operator=(const ClapTrap &obj)
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << GREEN << "ClapTrap "<< _name << " has destroyed" << DEFAULT << std::endl;
+	std::cout << GREEN << "ClapTrap " << _name << " has destroyed" << DEFAULT << std::endl;
 }
 
-void	ClapTrap::attack(const std::string& target)
+void ClapTrap::attack(const std::string &target)
 {
 	if (this->_energy > 0)
 	{
 		std::cout << "ClapTrap " << this->_name << " attacks ";
-		std::cout << target <<", causing " << this->_damage << " points of damage!" << std::endl;
+		std::cout << target << ", causing " << this->_damage << " points of damage!" << std::endl;
 		this->_energy -= 1;
 	}
 	else
 		std::cout << "ClapTrap " << this->_name << " does not have enough energy to attack" << std::endl;
 }
 
-void	ClapTrap::takeDamage(unsigned int amount)
+void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->_hp >= amount)
 	{
@@ -64,7 +64,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 		std::cout << "ClapTrap " << this->_name << " is dead" << std::endl;
 }
 
-void	ClapTrap::beRepaired(unsigned int amount)
+void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->_energy > 0)
 	{

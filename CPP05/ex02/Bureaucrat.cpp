@@ -1,11 +1,10 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(): _name("Unknow"), _grade(150)
+Bureaucrat::Bureaucrat() : _name("Unknow"), _grade(150)
 {
-	
 }
 
-Bureaucrat::Bureaucrat(const std::string &name, const int &grade): _name(name), _grade(grade)
+Bureaucrat::Bureaucrat(const std::string &name, const int &grade) : _name(name), _grade(grade)
 {
 	if (_grade < 1)
 		throw Bureaucrat::GradeTooHighExeception();
@@ -20,10 +19,9 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat::Bureaucrat(const Bureaucrat &obj) : _name(obj.getName()), _grade(obj.getGrade())
 {
-
 }
 
-Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &obj)
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &obj)
 {
 	if (this != &obj)
 	{
@@ -32,43 +30,43 @@ Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &obj)
 	return (*this);
 }
 
-const std::string	&Bureaucrat::getName() const
+const std::string &Bureaucrat::getName() const
 {
 	return (_name);
 }
 
-int	Bureaucrat::getGrade() const
+int Bureaucrat::getGrade() const
 {
 	return (_grade);
 }
 
-const char	*Bureaucrat::GradeTooHighExeception::what() const throw()
+const char *Bureaucrat::GradeTooHighExeception::what() const throw()
 {
 	return ("Grade Too High");
 }
 
-const char	*Bureaucrat::GradeTooLowExeception::what() const throw()
+const char *Bureaucrat::GradeTooLowExeception::what() const throw()
 {
 	return ("Grade Too Low");
 }
 
-void	Bureaucrat::incGrade()
+void Bureaucrat::incGrade()
 {
 	if (_grade - 1 < 1)
 		throw Bureaucrat::GradeTooHighExeception();
 	else
-		_grade -= 1;	
+		_grade -= 1;
 }
 
-void	Bureaucrat::decGrade()
+void Bureaucrat::decGrade()
 {
 	if (_grade + 1 > 150)
 		throw Bureaucrat::GradeTooHighExeception();
 	else
-		_grade += 1;	
+		_grade += 1;
 }
 
-void	Bureaucrat::signForm(AForm &obj)
+void Bureaucrat::signForm(AForm &obj)
 {
 	try
 	{
@@ -81,7 +79,7 @@ void	Bureaucrat::signForm(AForm &obj)
 	}
 }
 
-void	Bureaucrat::executeForm(const AForm &form)
+void Bureaucrat::executeForm(const AForm &form)
 {
 	try
 	{
@@ -94,7 +92,7 @@ void	Bureaucrat::executeForm(const AForm &form)
 	}
 }
 
-std::ostream&	operator<<(std::ostream& os, const Bureaucrat& obj)
+std::ostream &operator<<(std::ostream &os, const Bureaucrat &obj)
 {
 	os << obj.getName() << ", bureaucrat grade " << obj.getGrade() << ".";
 	return (os);

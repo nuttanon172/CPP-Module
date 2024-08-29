@@ -2,7 +2,6 @@
 
 Form::Form() : _name("Unknow"), _sign(false), _sign_grade(150), _exec_grade(150)
 {
-
 }
 
 Form::Form(const std::string &name, const int &req, const int &exec) : _name(name), _sign_grade(req), _exec_grade(exec)
@@ -21,7 +20,6 @@ Form::~Form()
 
 Form::Form(const Form &obj) : _name(obj.getName()), _sign(obj.getSigned()), _sign_grade(obj.getReq()), _exec_grade(obj.getExec())
 {
-
 }
 
 Form &Form::operator=(const Form &obj)
@@ -41,37 +39,37 @@ void Form::beSigned(const Bureaucrat &obj)
 		throw Form::GradeTooLowExeception();
 }
 
-const std::string	&Form::getName() const
+const std::string &Form::getName() const
 {
 	return (_name);
 }
 
-bool	Form::getSigned() const
+bool Form::getSigned() const
 {
 	return (_sign);
 }
 
-const int	&Form::getReq() const
+const int &Form::getReq() const
 {
 	return (_sign_grade);
 }
 
-const int	&Form::getExec() const
+const int &Form::getExec() const
 {
 	return (_exec_grade);
 }
 
-const char* Form::GradeTooHighExeception::what() const throw()
+const char *Form::GradeTooHighExeception::what() const throw()
 {
 	return ("Grade Too High");
 }
 
-const char* Form::GradeTooLowExeception::what() const throw()
+const char *Form::GradeTooLowExeception::what() const throw()
 {
 	return ("Grade Too Low");
 }
 
-std::ostream&	operator<<(std::ostream& os, const Form& obj)
+std::ostream &operator<<(std::ostream &os, const Form &obj)
 {
 	os << obj.getName();
 	os << ", Sign status: " << std::boolalpha << obj.getSigned();

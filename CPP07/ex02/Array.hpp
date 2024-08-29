@@ -5,10 +5,12 @@
 #include <exception>
 
 template <class T>
-class Array{
+class Array
+{
 private:
 	unsigned int arr_size;
 	T *arr_data;
+
 public:
 	Array<T>()
 	{
@@ -26,7 +28,7 @@ public:
 	{
 		arr_size = obj.size();
 		arr_data = new T[obj.size()];
-		for (unsigned int i = 0; i < obj.size();i++)
+		for (unsigned int i = 0; i < obj.size(); i++)
 			arr_data[i] = obj.arr_data[i];
 	}
 	Array<T> &operator=(const Array<T> &obj)
@@ -36,7 +38,7 @@ public:
 			delete[] arr_data;
 			arr_size = obj.size();
 			arr_data = new T[obj.size()];
-			for (unsigned int i = 0; i < obj.size();i++)
+			for (unsigned int i = 0; i < obj.size(); i++)
 				arr_data[i] = obj.arr_data[i];
 		}
 		return (*this);
@@ -48,8 +50,8 @@ public:
 		std::cout << "Array has destroyed" << std::endl;
 	}
 	unsigned int size() const
-	{ 
-		return (arr_size); 
+	{
+		return (arr_size);
 	}
 	T &operator[](unsigned int index) const
 	{
@@ -60,11 +62,11 @@ public:
 	}
 	class OutOfBoundException : public std::exception
 	{
-		public:
-			virtual const char* what() const throw()
-			{
-				return ("Index is out of bounds");
-			}
+	public:
+		virtual const char *what() const throw()
+		{
+			return ("Index is out of bounds");
+		}
 	};
 };
 

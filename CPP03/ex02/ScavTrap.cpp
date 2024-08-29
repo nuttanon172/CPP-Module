@@ -23,10 +23,10 @@ ScavTrap::ScavTrap(const ScavTrap &obj) : ClapTrap(obj)
 
 ScavTrap::~ScavTrap(void)
 {
-	std::cout << BLUE << "ScavTrap "<< _name << " has destroyed" << DEFAULT << std::endl;
+	std::cout << BLUE << "ScavTrap " << _name << " has destroyed" << DEFAULT << std::endl;
 }
 
-ScavTrap	&ScavTrap::operator=(const ScavTrap &obj)
+ScavTrap &ScavTrap::operator=(const ScavTrap &obj)
 {
 	if (this != &obj)
 	{
@@ -38,17 +38,17 @@ ScavTrap	&ScavTrap::operator=(const ScavTrap &obj)
 	return (*this);
 }
 
-void	ScavTrap::guardGate(void)
+void ScavTrap::guardGate(void)
 {
 	std::cout << "ScavTrap " << this->_name << " is now in Gate keeper mode" << std::endl;
 }
 
-void	ScavTrap::attack(const std::string& target)
+void ScavTrap::attack(const std::string &target)
 {
 	if (this->_energy > 0)
 	{
 		std::cout << "ScavTrap " << this->_name << " attacks ";
-		std::cout << target <<", causing " << this->_damage << " points of damage!" << std::endl;
+		std::cout << target << ", causing " << this->_damage << " points of damage!" << std::endl;
 		this->_energy -= 1;
 	}
 	else

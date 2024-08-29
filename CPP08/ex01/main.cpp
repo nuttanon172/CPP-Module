@@ -16,7 +16,8 @@ int main()
 void test1()
 {
 	std::cout << "---------------- Test 1 ----------------" << std::endl;
-	try {
+	try
+	{
 		Span sp = Span(5);
 		sp.addNumber(6);
 		sp.addNumber(3);
@@ -36,7 +37,8 @@ void test1()
 void test2()
 {
 	std::cout << "---------------- Test 2 ----------------" << std::endl;
-	try {
+	try
+	{
 		Span sp = Span(4);
 		sp.addNumber(6);
 		sp.addNumber(3);
@@ -55,10 +57,11 @@ void test2()
 void test3()
 {
 	std::cout << "---------------- Test 3 ----------------" << std::endl;
-	try {
+	try
+	{
 		std::srand(std::time(0));
 		Span sp = Span(10);
-		for (int i =0;i < 10;i++)
+		for (int i = 0; i < 10; i++)
 			sp.addNumber(std::rand() % 1000);
 		sp.printContainer();
 		std::cout << sp.shortestSpan() << std::endl;
@@ -73,7 +76,8 @@ void test3()
 void test4()
 {
 	std::cout << "----------- 10K Numbers Test -----------" << std::endl;
-	try {
+	try
+	{
 		/* Create random number container */
 		std::srand(std::time(0));
 		std::vector<int> tmpVec(10000);

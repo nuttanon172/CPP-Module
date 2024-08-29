@@ -1,9 +1,9 @@
 #include "Zombie.hpp"
 
-int	main(void)
+int main(void)
 {
-	Zombie	zombie("ZombieX");
-	Zombie	*zombie1;
+	Zombie zombie("ZombieX");
+	Zombie *zombie1;
 
 	zombie.announce();
 	randomChump("ZombieY");

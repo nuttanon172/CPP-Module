@@ -9,7 +9,8 @@
 #include <cstdlib>
 #include <cstring>
 
-class ScalarConverter{
+class ScalarConverter
+{
 private:
 	char _c;
 	int _i;
@@ -17,6 +18,7 @@ private:
 	double _d;
 	bool _impossible;
 	std::string _str;
+
 public:
 	ScalarConverter();
 	ScalarConverter(const ScalarConverter &obj);
@@ -30,13 +32,13 @@ public:
 	void printDouble();
 	class NonDisplayableExeception : public std::exception
 	{
-		public:
-			virtual const char* what() const throw();
+	public:
+		virtual const char *what() const throw();
 	};
 	class ImpossibleExeception : public std::exception
 	{
-		public:
-			virtual const char* what() const throw();
+	public:
+		virtual const char *what() const throw();
 	};
 };
 

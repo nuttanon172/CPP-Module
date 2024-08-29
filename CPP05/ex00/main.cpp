@@ -1,6 +1,6 @@
 #include "Bureaucrat.hpp"
 
-int	main(void)
+int main(void)
 {
 	try
 	{
@@ -10,10 +10,10 @@ int	main(void)
 		std::cout << k1 << '\n';
 		k1.decGrade();
 		std::cout << k1 << '\n';
-	
+
 		Bureaucrat k2("test2", 1);
 		std::cout << k2 << '\n';
-		//k2.incGrade();
+		// k2.incGrade();
 		std::cout << k2 << '\n';
 		k2.decGrade();
 		std::cout << k2 << '\n';

@@ -21,19 +21,19 @@ AAnimal::~AAnimal(void)
 	std::cout << GREEN << "AAnimal " << this->type << " has destroyed" << DEFAULT << std::endl;
 }
 
-AAnimal	&AAnimal::operator=(const AAnimal &obj)
+AAnimal &AAnimal::operator=(const AAnimal &obj)
 {
 	if (this != &obj)
 		this->type = obj.type;
 	return (*this);
 }
 
-void	AAnimal::makeSound(void) const
+void AAnimal::makeSound(void) const
 {
 	std::cout << "..." << std::endl;
 }
 
-std::string	AAnimal::getType(void) const
+std::string AAnimal::getType(void) const
 {
 	return (this->type);
 }

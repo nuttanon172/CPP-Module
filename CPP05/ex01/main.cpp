@@ -1,7 +1,7 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-int	main(void)
+int main(void)
 {
 	Form a("formA", 123, 123);
 	Bureaucrat b("buA", 122);

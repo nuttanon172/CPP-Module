@@ -2,10 +2,11 @@
 
 void test1()
 {
-	try{
+	try
+	{
 		std::cout << "---------------- Test 1 ----------------" << std::endl;
 		std::vector<int> numbers;
-		for (int i = 1;i<=5;i++)
+		for (int i = 1; i <= 5; i++)
 			numbers.push_back(i);
 		easyfind(numbers, 5);
 	}
@@ -17,17 +18,18 @@ void test1()
 
 void test2()
 {
-	try {
+	try
+	{
 		std::cout << "---------------- Test 2 ----------------" << std::endl;
 		std::vector<int> numbers;
-		for (int i = 1;i<=5;i++)
+		for (int i = 1; i <= 5; i++)
 			numbers.push_back(i);
 		easyfind(numbers, 6);
 	}
 	catch (std::exception &e)
 	{
 		std::cerr << "Error: " << e.what() << std::endl;
-	}	
+	}
 }
 
 int main()

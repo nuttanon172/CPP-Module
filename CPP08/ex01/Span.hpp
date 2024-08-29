@@ -8,10 +8,12 @@
 #include <ctime>
 #include <algorithm>
 
-class Span{
+class Span
+{
 private:
 	unsigned int N;
 	std::vector<int> container;
+
 public:
 	Span(unsigned int N);
 	Span(const Span &obj);

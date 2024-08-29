@@ -1,6 +1,6 @@
 #include "Serializer.hpp"
 
-int	main()
+int main()
 {
 	Data d1;
 	d1.name = "d1";
@@ -8,8 +8,8 @@ int	main()
 	std::cout << "Data: " << d1.name << std::endl;
 	std::cout << "Id: " << d1.id << std::endl;
 
-	uintptr_t uintD1 = Serializer::serialize(&d1); // Convert memory addess of d1 to uintptr_t type
-	uintptr_t *ptrUint = reinterpret_cast<uintptr_t *>(uintD1);// Convert uintptr_t memory addess to ptr hold uintptr_t memory addess
+	uintptr_t uintD1 = Serializer::serialize(&d1);				// Convert memory addess of d1 to uintptr_t type
+	uintptr_t *ptrUint = reinterpret_cast<uintptr_t *>(uintD1); // Convert uintptr_t memory addess to ptr hold uintptr_t memory addess
 	std::cout << "Address: " << ptrUint << std::endl;
 
 	std::cout << "--------------------------------\n";

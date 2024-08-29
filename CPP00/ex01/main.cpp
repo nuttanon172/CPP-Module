@@ -1,9 +1,9 @@
 #include "PhoneBook.hpp"
 
-int	main(void)
+int main(void)
 {
-	std::string	str;
-	PhoneBook	pb;
+	std::string str;
+	PhoneBook pb;
 
 	std::cout << "Enter Command: ";
 	while (std::getline(std::cin, str))

@@ -1,8 +1,8 @@
 #include "ClapTrap.hpp"
 
-int	main(void)
+int main(void)
 {
-	ClapTrap	player("player");
+	ClapTrap player("player");
 
 	for (int i = 0; i < 12; i++)
 		player.attack("Monster");

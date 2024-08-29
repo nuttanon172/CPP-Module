@@ -2,11 +2,11 @@
 #include <fstream>
 #include <cstdlib>
 
-void	ft_replace(std::ifstream &inputFile, std::ofstream &outFile, std::string strFind, std::string strRep)
+void ft_replace(std::ifstream &inputFile, std::ofstream &outFile, std::string strFind, std::string strRep)
 {
-	std::string		line;
-	std::string		tmp_line;
-	size_t			pos;
+	std::string line;
+	std::string tmp_line;
+	size_t pos;
 
 	while (std::getline(inputFile, line))
 	{
@@ -25,37 +25,37 @@ void	ft_replace(std::ifstream &inputFile, std::ofstream &outFile, std::string st
 	}
 }
 
-int	main(int ac, char **av)
+int main(int ac, char **av)
 {
-	std::ifstream	inputFile;
-	std::ofstream	outFile;
+	std::ifstream inputFile;
+	std::ofstream outFile;
 
 	if (ac != 4)
 	{
 		std::cerr << "Program takes three parameters order: a filename and two strings" << std::endl;
 		return (EXIT_FAILURE);
-	}	
-	std::string	filename = (std::string)av[1];
-	std::string	strFind = (std::string)av[2];
-	std::string	strRep = (std::string)av[3];
+	}
+	std::string filename = (std::string)av[1];
+	std::string strFind = (std::string)av[2];
+	std::string strRep = (std::string)av[3];
 	if (filename.empty() || strFind.empty())
 	{
-		std::cerr << "Input valid" << std::endl;	
+		std::cerr << "Input valid" << std::endl;
 		return (EXIT_FAILURE);
 	}
 	size_t pos_l = filename.find_last_of('.');
-	std::string	outname = filename.substr(0, pos_l);
+	std::string outname = filename.substr(0, pos_l);
 	outname.append(".replace");
 	inputFile.open(filename.c_str(), std::ios::in);
 	if (!inputFile.is_open())
 	{
-		std::cerr << "Open Inputfile failed" << std::endl;	
+		std::cerr << "Open Inputfile failed" << std::endl;
 		return (EXIT_FAILURE);
 	}
 	outFile.open(outname.c_str(), std::ios::out | std::ios::trunc);
 	if (!outFile.is_open())
 	{
-		std::cerr << "Open Outfile failed" << std::endl;	
+		std::cerr << "Open Outfile failed" << std::endl;
 		return (inputFile.close(), EXIT_FAILURE);
 	}
 	ft_replace(inputFile, outFile, strFind, strRep);

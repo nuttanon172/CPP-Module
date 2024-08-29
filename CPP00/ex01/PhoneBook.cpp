@@ -8,25 +8,26 @@ PhoneBook::PhoneBook(void)
 
 PhoneBook::~PhoneBook(void)
 {
-	std::cout << std::endl << "PhoneBook: Good Bye..." << std::endl;
+	std::cout << std::endl
+			  << "PhoneBook: Good Bye..." << std::endl;
 }
 
-std::string	PhoneBook::strTruncate(std::string str)
+std::string PhoneBook::strTruncate(std::string str)
 {
 	return (str.length() <= 10 ? str : str.substr(0, 9) + ".");
 }
 
-void	PhoneBook::printIndex(int i)
+void PhoneBook::printIndex(int i)
 {
 	if (std::cin.eof())
 	{
 		std::cout << std::endl;
-		return ;
+		return;
 	}
 	if (i < 1 || i > 8 || i > total)
 	{
 		std::cout << "PhoneBook: Enter index in range[1 - " << total << "]\n";
-		return ;
+		return;
 	}
 	for (int i = 0; i < 46; i++)
 		std::cout << "-";
@@ -42,7 +43,7 @@ void	PhoneBook::printIndex(int i)
 	std::cout << std::endl;
 }
 
-void	PhoneBook::printContact(void)
+void PhoneBook::printContact(void)
 {
 	for (int i = 0; i < total; i++)
 	{
@@ -50,25 +51,25 @@ void	PhoneBook::printContact(void)
 		std::cout.width(10);
 		std::cout << i + 1 << "|";
 		std::cout.width(10);
-		std::cout <<  strTruncate(contact[i].getFirstN()) << "|";
+		std::cout << strTruncate(contact[i].getFirstN()) << "|";
 		std::cout.width(10);
 		std::cout << strTruncate(contact[i].getLastN()) << "|";
 		std::cout.width(10);
-		std::cout <<  strTruncate(contact[i].getNickN()) << "|";
+		std::cout << strTruncate(contact[i].getNickN()) << "|";
 		std::cout << std::endl;
 	}
 	for (int i = 0; i < 45; i++)
 		std::cout << "-";
 }
 
-void	PhoneBook::printHeader(void)
+void PhoneBook::printHeader(void)
 {
-	std::string	i;
+	std::string i;
 
 	if (!total)
 	{
 		std::cout << "PhoneBook: Contact is empty" << std::endl;
-		return ;
+		return;
 	}
 	for (int i = 0; i < 45; i++)
 		std::cout << "-";
@@ -83,17 +84,17 @@ void	PhoneBook::printHeader(void)
 	printIndex(atoi(i.c_str()));
 }
 
-int	PhoneBook::getIndex(void)
+int PhoneBook::getIndex(void)
 {
 	if (index > 7)
 		index = 0;
 	return (index++);
 }
 
-void	PhoneBook::getInput(std::string msg, std::string *str)
+void PhoneBook::getInput(std::string msg, std::string *str)
 {
 	if (std::cin.eof())
-		return ;
+		return;
 	std::cout << msg;
 	while (std::getline(std::cin, *str))
 	{
@@ -101,14 +102,14 @@ void	PhoneBook::getInput(std::string msg, std::string *str)
 		{
 			std::cout << "PhoneBook: Contact can’t have empty fields" << std::endl;
 			std::cout << msg;
-			continue ;
+			continue;
 		}
 		else
-			return ;
+			return;
 	}
 }
 
-void	PhoneBook::addContact(void)
+void PhoneBook::addContact(void)
 {
 	std::string f, l, n, p, d;
 
@@ -119,7 +120,7 @@ void	PhoneBook::addContact(void)
 	getInput("darkest secret: ", &d);
 	contact[getIndex()].setValue(f, l, n, p, d);
 	if (total < 8 && !std::cin.eof())
-	{	
+	{
 		total += 1;
 		std::cout << "PhoneBook: Contact saved" << std::endl;
 	}

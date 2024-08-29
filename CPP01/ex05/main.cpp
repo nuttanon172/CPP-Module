@@ -1,8 +1,8 @@
 #include "Harl.hpp"
 
-int	main(int ac, char **av)
+int main(int ac, char **av)
 {
-	Harl	obj;
+	Harl obj;
 
 	if (ac < 2)
 	{

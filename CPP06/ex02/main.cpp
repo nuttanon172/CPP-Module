@@ -12,9 +12,9 @@ class A;
 class B;
 class C;
 
-Base	*generate(void);
-void	identify(Base* p);
-void	identify(Base& p);
+Base *generate(void);
+void identify(Base *p);
+void identify(Base &p);
 
 int main()
 {
@@ -42,12 +42,12 @@ int main()
 	{
 		Base *ptr = generate();
 		identify(ptr);
-		sleep (1);
+		sleep(1);
 		delete ptr;
 	}
 }
 
-Base	*generate(void)
+Base *generate(void)
 {
 	std::srand(std::time(0));
 	if (std::rand() % 3 == 0)
@@ -58,7 +58,7 @@ Base	*generate(void)
 		return (new C());
 }
 
-void	identify(Base* p)
+void identify(Base *p)
 {
 	if (dynamic_cast<A *>(p))
 		std::cout << "ptr: A" << std::endl;
@@ -68,7 +68,7 @@ void	identify(Base* p)
 		std::cout << "ptr: C" << std::endl;
 }
 
-void	identify(Base& p)
+void identify(Base &p)
 {
 	if (dynamic_cast<A *>(&p))
 		std::cout << "ptr: A" << std::endl;

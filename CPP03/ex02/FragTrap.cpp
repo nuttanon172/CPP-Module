@@ -26,7 +26,7 @@ FragTrap::~FragTrap(void)
 	std::cout << YELLOW << "FlagTrap " << _name << " has detroyed" << DEFAULT << std::endl;
 }
 
-FragTrap	&FragTrap::operator=(const FragTrap &obj)
+FragTrap &FragTrap::operator=(const FragTrap &obj)
 {
 	if (this != &obj)
 	{
@@ -38,7 +38,7 @@ FragTrap	&FragTrap::operator=(const FragTrap &obj)
 	return (*this);
 }
 
-void	FragTrap::highFivesGuys(void)
+void FragTrap::highFivesGuys(void)
 {
 	if (this->_energy > 0)
 	{

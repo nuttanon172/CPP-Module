@@ -1,11 +1,11 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
-int	main(void)
+int main(void)
 {
-	ClapTrap	player1("player1");
-	ScavTrap	player3("player2");
-	ScavTrap	player2 = player3;
+	ClapTrap player1("player1");
+	ScavTrap player3("player2");
+	ScavTrap player2 = player3;
 
 	for (int i = 0; i < 12; i++)
 		player1.attack("Monster");

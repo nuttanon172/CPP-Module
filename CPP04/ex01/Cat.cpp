@@ -18,7 +18,7 @@ Cat::Cat::~Cat(void)
 	std::cout << YELLOW << this->type << " has destroyed" << DEFAULT << std::endl;
 }
 
-Cat	&Cat::operator=(const Cat &obj)
+Cat &Cat::operator=(const Cat &obj)
 {
 	if (this != &obj)
 	{
@@ -29,12 +29,12 @@ Cat	&Cat::operator=(const Cat &obj)
 	return (*this);
 }
 
-void	Cat::makeSound(void) const
+void Cat::makeSound(void) const
 {
 	std::cout << "Meow Meow!!" << std::endl;
 }
 
-Brain	*Cat::getBrain(void) const
+Brain *Cat::getBrain(void) const
 {
-	return (this->_brain);	
+	return (this->_brain);
 }

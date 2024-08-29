@@ -5,13 +5,13 @@
 #include "ShrubberyCreationForm.hpp"
 #include "Intern.hpp"
 
-int	main(void)
+int main(void)
 {
 	try
 	{
 		std::cout << "--------------Test 1--------------\n";
 		Intern someRandomIntern;
-		AForm*  rrf;
+		AForm *rrf;
 
 		rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
 		Bureaucrat boss("boss", 1);
@@ -30,7 +30,7 @@ int	main(void)
 	{
 		std::cout << "--------------Test 2--------------\n";
 		Intern someRandomIntern;
-		AForm*  rrf;
+		AForm *rrf;
 
 		rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
 		Bureaucrat boss("boss", 1);

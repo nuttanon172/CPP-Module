@@ -2,13 +2,13 @@
 #include <cctype>
 #include <cstdlib>
 
-void	print_upper(char *av)
+void print_upper(char *av)
 {
 	for (int j = 0; av[j]; j++)
 		std::cout << (char)toupper(av[j]);
 }
 
-int	main(int ac, char **av)
+int main(int ac, char **av)
 {
 	if (ac < 2)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";

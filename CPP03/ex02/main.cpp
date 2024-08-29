@@ -2,12 +2,12 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-int	main(void)
+int main(void)
 {
-	ClapTrap	player1("player1");
-	FragTrap	player3("player2");
-	FragTrap	player2(player3);
-	ScavTrap	player4;
+	ClapTrap player1("player1");
+	FragTrap player3("player2");
+	FragTrap player2(player3);
+	ScavTrap player4;
 
 	for (int i = 0; i < 11; i++)
 		player1.attack("Monster");
@@ -22,9 +22,9 @@ int	main(void)
 	player2.beRepaired(10);
 	player2.takeDamage(9);
 	player4.beRepaired(1);
-	ScavTrap	p1("p1");
+	ScavTrap p1("p1");
 	p1.takeDamage(50);
-	ScavTrap	p2(p1);
+	ScavTrap p2(p1);
 	p2.takeDamage(50);
 	return (EXIT_SUCCESS);
 }

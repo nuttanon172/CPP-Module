@@ -2,12 +2,10 @@
 
 Span::Span(unsigned int N) : N(N)
 {
-
 }
 
 Span::Span(const Span &obj) : N(obj.N)
 {
-
 }
 
 Span &Span::operator=(const Span &obj)
@@ -19,7 +17,6 @@ Span &Span::operator=(const Span &obj)
 
 Span::~Span()
 {
-
 }
 
 void Span::addNumber(int nbr)
@@ -43,9 +40,9 @@ int Span::shortestSpan()
 	if (container.size() < 2)
 		throw std::out_of_range("container is out of range!!");
 	int tmp = abs(container[0] - container[1]);
-	for (std::vector<int>::size_type i = 0;i < container.size();i++)
+	for (std::vector<int>::size_type i = 0; i < container.size(); i++)
 	{
-		for (std::vector<int>::size_type j = 1 + i;j <= container.size() - 1;j++)
+		for (std::vector<int>::size_type j = 1 + i; j <= container.size() - 1; j++)
 		{
 			if (abs(container[i] - container[j]) < tmp)
 				tmp = abs(container[i] - container[j]);
@@ -65,7 +62,7 @@ int Span::longestSpan()
 
 void Span::printContainer()
 {
-	for (std::vector<int>::size_type it = 0; it < container.size();it++)
+	for (std::vector<int>::size_type it = 0; it < container.size(); it++)
 		std::cout << container[it] << ' ';
 	std::cout << std::endl;
 }

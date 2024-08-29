@@ -36,7 +36,6 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &obj)
 
 ScalarConverter::~ScalarConverter()
 {
-
 }
 
 void ScalarConverter::printData(std::string str)
@@ -76,8 +75,9 @@ void ScalarConverter::convert(std::string str)
 
 void ScalarConverter::printChar()
 {
-	try {
-		if (_d == -std::numeric_limits<double>::infinity() || _d == std::numeric_limits<double>::infinity() || \
+	try
+	{
+		if (_d == -std::numeric_limits<double>::infinity() || _d == std::numeric_limits<double>::infinity() ||
 			_d == std::numeric_limits<double>::quiet_NaN() || _impossible)
 			throw ImpossibleExeception();
 		else if (!isprint(_c) || _i < 0 || _i > 127)
@@ -93,8 +93,9 @@ void ScalarConverter::printChar()
 
 void ScalarConverter::printInt()
 {
-	try {
-		if (_d == -std::numeric_limits<double>::infinity() || _d == std::numeric_limits<double>::infinity() || \
+	try
+	{
+		if (_d == -std::numeric_limits<double>::infinity() || _d == std::numeric_limits<double>::infinity() ||
 			_d == std::numeric_limits<double>::quiet_NaN() || _impossible)
 			throw ImpossibleExeception();
 		else
@@ -108,7 +109,8 @@ void ScalarConverter::printInt()
 
 void ScalarConverter::printFloat()
 {
-	try {
+	try
+	{
 		if (_d == -std::numeric_limits<double>::infinity() || _d == std::numeric_limits<double>::infinity())
 			throw ImpossibleExeception();
 		else
@@ -122,7 +124,8 @@ void ScalarConverter::printFloat()
 
 void ScalarConverter::printDouble()
 {
-	try {
+	try
+	{
 		if (_d == -std::numeric_limits<double>::infinity() || _d == std::numeric_limits<double>::infinity())
 			throw ImpossibleExeception();
 		else
@@ -134,31 +137,31 @@ void ScalarConverter::printDouble()
 	}
 }
 
-const char	*ScalarConverter::NonDisplayableExeception::what() const throw()
+const char *ScalarConverter::NonDisplayableExeception::what() const throw()
 {
 	return ("Non displayable");
 }
 
-const char	*ScalarConverter::ImpossibleExeception::what() const throw()
+const char *ScalarConverter::ImpossibleExeception::what() const throw()
 {
 	return ("impossible");
 }
 
 void isCorrect(char *av)
 {
-	size_t	i = 0;
-	size_t	count_f = 0;
-	size_t	count_dot = 0;
-	size_t	count_arithmetic = 0;
+	size_t i = 0;
+	size_t count_f = 0;
+	size_t count_dot = 0;
+	size_t count_arithmetic = 0;
 
 	if (!av)
-		return ;
+		return;
 	while (av[i])
 	{
-		if (!strcmp(av, "nan") || !strcmp(av, "inf") || !strcmp(av, "inff") || \
+		if (!strcmp(av, "nan") || !strcmp(av, "inf") || !strcmp(av, "inff") ||
 			!strcmp(av, "+inf") || !strcmp(av, "+inff") || !strcmp(av, "-inf") || !strcmp(av, "-inff"))
-			return ;
-		else if ((av[0] == '+' || av[0] == '-' ) && !count_arithmetic)
+			return;
+		else if ((av[0] == '+' || av[0] == '-') && !count_arithmetic)
 			count_arithmetic++;
 		else if (av[i] == 'f' && !count_f)
 			count_f++;

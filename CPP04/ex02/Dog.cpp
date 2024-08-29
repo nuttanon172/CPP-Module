@@ -15,10 +15,10 @@ Dog::Dog(const Dog &obj) : AAnimal(obj)
 Dog::Dog::~Dog(void)
 {
 	delete this->_brain;
-	std::cout << YELLOW << this->type <<" has destroyed" << DEFAULT << std::endl;
+	std::cout << YELLOW << this->type << " has destroyed" << DEFAULT << std::endl;
 }
 
-Dog	&Dog::operator=(const Dog &obj)
+Dog &Dog::operator=(const Dog &obj)
 {
 	if (this != &obj)
 	{
@@ -29,12 +29,12 @@ Dog	&Dog::operator=(const Dog &obj)
 	return (*this);
 }
 
-void	Dog::makeSound(void) const
+void Dog::makeSound(void) const
 {
 	std::cout << "Woof Woof!!" << std::endl;
 }
 
-Brain	*Dog::getBrain(void) const
+Brain *Dog::getBrain(void) const
 {
 	return (this->_brain);
 }

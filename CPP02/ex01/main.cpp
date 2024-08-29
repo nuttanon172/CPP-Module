@@ -1,11 +1,11 @@
 #include "Fixed.hpp"
 
-int	main(void) 
+int main(void)
 {
-	Fixed		a;
-	Fixed const	b(10);
-	Fixed const	c(42.42f);
-	Fixed const	d(b);
+	Fixed a;
+	Fixed const b(10);
+	Fixed const c(42.42f);
+	Fixed const d(b);
 
 	a = Fixed(1234.4321f);
 
@@ -18,5 +18,5 @@ int	main(void)
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
-	return 0; 
+	return 0;
 }

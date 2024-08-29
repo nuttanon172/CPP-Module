@@ -1,6 +1,6 @@
 #include "Fixed.hpp"
 
-const int	Fixed::_frac_bits = 8;
+const int Fixed::_frac_bits = 8;
 
 Fixed::Fixed(void)
 {
@@ -39,27 +39,27 @@ Fixed &Fixed::operator=(const Fixed &obj)
 	return (*this);
 }
 
-int	Fixed::getRawBits(void) const
+int Fixed::getRawBits(void) const
 {
 	return (this->_fp_nbr);
 }
 
-void	Fixed::setRawBits(int const raw)
+void Fixed::setRawBits(int const raw)
 {
 	this->_fp_nbr = raw * (1 << this->_frac_bits);
 }
 
-float	Fixed::toFloat(void) const
+float Fixed::toFloat(void) const
 {
 	return ((float)_fp_nbr / (1 << this->_frac_bits));
 }
 
-int	Fixed::toInt(void) const
+int Fixed::toInt(void) const
 {
 	return (this->_fp_nbr >> this->_frac_bits);
 }
 
-std::ostream& operator<<(std::ostream& os, const Fixed& obj)
+std::ostream &operator<<(std::ostream &os, const Fixed &obj)
 {
 	os << obj.toFloat();
 	return (os);

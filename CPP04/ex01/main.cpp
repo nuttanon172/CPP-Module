@@ -2,7 +2,7 @@
 #include "Dog.hpp"
 #include "Brain.hpp"
 
-int	main(void)
+int main(void)
 {
 	Animal *meta[10];
 	for (int i = 0; i < 5; i++)
@@ -20,7 +20,8 @@ int	main(void)
 	k = test;
 	for (int i = 0; i < 10; i++)
 		delete meta[i];
-	std::cout << "\n~~~Brain DeepCopy Test~~~\n" << std::endl;
+	std::cout << "\n~~~Brain DeepCopy Test~~~\n"
+			  << std::endl;
 	Brain C;
 	C.displayIdeas();
 	C.setIdeas("Woof!");

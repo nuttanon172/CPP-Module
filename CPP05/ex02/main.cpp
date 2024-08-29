@@ -4,7 +4,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 
-int	main(void)
+int main(void)
 {
 	std::cout << "--------------Test 1--------------\n";
 	PresidentialPardonForm form("Someone");
