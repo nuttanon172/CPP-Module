@@ -41,7 +41,7 @@ ScalarConverter::~ScalarConverter()
 void ScalarConverter::printData(std::string str)
 {
 	_str = str;
-	if (_str == "nan")
+	if (_str == "nan" || _str == "nanf")
 		_d = std::numeric_limits<double>::quiet_NaN();
 	else if (_str == "inf" || _str == "inff" || _str == "+inf" || _str == "+inff")
 		_d = std::numeric_limits<double>::infinity();
@@ -83,7 +83,7 @@ void ScalarConverter::printChar()
 		else if (!isprint(_c) || _i < 0 || _i > 127)
 			throw NonDisplayableExeception();
 		else
-			std::cout << "char: " << _c << '\n';
+			std::cout << "char: " << '\'' << _c << '\'' << '\n';
 	}
 	catch (std::exception &e)
 	{
@@ -109,32 +109,12 @@ void ScalarConverter::printInt()
 
 void ScalarConverter::printFloat()
 {
-	try
-	{
-		if (_d == -std::numeric_limits<double>::infinity() || _d == std::numeric_limits<double>::infinity())
-			throw ImpossibleExeception();
-		else
-			std::cout << std::fixed << "float: " << std::setprecision(1) << _f << 'f' << '\n';
-	}
-	catch (std::exception &e)
-	{
-		std::cout << "float: " << e.what() << 'f' << '\n';
-	}
+	std::cout << std::fixed << "float: " << std::setprecision(1) << _f << 'f' << '\n';
 }
 
 void ScalarConverter::printDouble()
 {
-	try
-	{
-		if (_d == -std::numeric_limits<double>::infinity() || _d == std::numeric_limits<double>::infinity())
-			throw ImpossibleExeception();
-		else
-			std::cout << "double: " << std::setprecision(1) << _d << '\n';
-	}
-	catch (std::exception &e)
-	{
-		std::cout << "double: " << e.what() << '\n';
-	}
+	std::cout << "double: " << std::setprecision(1) << _d << '\n';
 }
 
 const char *ScalarConverter::NonDisplayableExeception::what() const throw()
@@ -158,7 +138,7 @@ void isCorrect(char *av)
 		return;
 	while (av[i])
 	{
-		if (!strcmp(av, "nan") || !strcmp(av, "inf") || !strcmp(av, "inff") ||
+		if (!strcmp(av, "nan") || !strcmp(av, "nanf") || !strcmp(av, "inf") || !strcmp(av, "inff") ||
 			!strcmp(av, "+inf") || !strcmp(av, "+inff") || !strcmp(av, "-inf") || !strcmp(av, "-inff"))
 			return;
 		else if ((av[0] == '+' || av[0] == '-') && !count_arithmetic)

@@ -1,4 +1,4 @@
-NAME      = scalar
+NAME      = convert
 
 CXX       = c++
 
