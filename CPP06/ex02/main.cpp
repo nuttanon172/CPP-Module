@@ -49,13 +49,17 @@ int main()
 
 Base *generate(void)
 {
-	std::srand(std::time(0));
-	if (std::rand() % 3 == 0)
+	srand(time(NULL));
+	int randNbr = rand() % 3;
+	switch (randNbr)
+	{
+	case 0:
 		return (new A());
-	else if (std::rand() % 3 == 1)
+	case 1:
 		return (new B());
-	else
+	default:
 		return (new C());
+	}
 }
 
 void identify(Base *p)
