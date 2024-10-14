@@ -6,9 +6,11 @@ CXXFLAGS  = -Wall -Wextra -Werror -std=c++98
 
 OBJ_DIR   = obj
 
-HEADERS   = ScalarConverter.hpp
+HEADERS   = ScalarConverter.hpp \
+			utils.hpp
 
 SRCS      = ScalarConverter.cpp \
+			utils.cpp \
 			main.cpp
 
 OBJS      =	$(patsubst %.cpp,$(OBJ_DIR)/%.o,$(SRCS))
