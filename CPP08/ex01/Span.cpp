@@ -62,7 +62,8 @@ int Span::longestSpan()
 
 void Span::printContainer()
 {
-	for (std::vector<int>::size_type it = 0; it < container.size(); it++)
-		std::cout << container[it] << ' ';
+	std::vector<int>::iterator it = container.begin();
+	for (; it != container.end(); it++)
+		std::cout << *it << " ";
 	std::cout << std::endl;
 }
